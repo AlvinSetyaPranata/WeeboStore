@@ -8,10 +8,7 @@ import Footer from "../components/Footer"
 export default function Home() {
   return (
     <main>
-      <div className="px-12">
-        <Navbar />
-
-        <div className="pt-1 pb-12">
+        <div className="pt-1 pb-12 px-12">
 
           {/* slider */}
           <div className="w-full rounded-lg bg-red-500 h-[200px] mt-8 mb-12">
@@ -35,12 +32,7 @@ export default function Home() {
             <Card />
             <Card />
           </HorizontalGroup>
-
-          {/* <BottomBar /> */}
         </div>
-
-      </div>
-        <Footer />
     </main>
   )
 }

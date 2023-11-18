@@ -3,7 +3,7 @@ import Image from "next/image"
 
 export default function Card() {
     return (
-        <div className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0">
+        <div className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0 bg-white">
             <div className="relative w-full h-[180px] overflow-hidden">
                 <Image
                     src="/card1.png"

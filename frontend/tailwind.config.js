@@ -13,6 +13,9 @@ module.exports = {
       backgroundColor: {
         'primary' : '#6DCBFF'
       },
+      fontFamily: {
+        'heading' : 'Inter, sans-serif'
+      }
     },
   },
   plugins: [],

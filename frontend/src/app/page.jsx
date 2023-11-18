@@ -39,8 +39,8 @@ export default function Home() {
           {/* <BottomBar /> */}
         </div>
 
-        <Footer />
       </div>
+        <Footer />
     </main>
   )
 }

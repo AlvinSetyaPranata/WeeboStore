@@ -1,7 +1,8 @@
 import Card from "@/components/Atoms/Card"
-import BottomBar from "@/components/BottomBar"
+// import BottomBar from "@/components/BottomBar"
 import HorizontalGroup from "@/components/Molecules/HorizontalGroup"
 import Navbar from "@/components/Navbar"
+import Footer from "../components/Footer"
 
 
 export default function Home() {
@@ -35,10 +36,10 @@ export default function Home() {
             <Card />
           </HorizontalGroup>
 
-
           {/* <BottomBar /> */}
         </div>
 
+        <Footer />
       </div>
     </main>
   )

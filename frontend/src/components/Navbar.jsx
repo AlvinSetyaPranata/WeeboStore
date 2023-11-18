@@ -2,7 +2,7 @@ import { Account } from "./SVG";
 
 export default function Navbar() {
     return (
-        <div className="sticky top-0 bg-white w-full py-6 flex items-center justify-between">
+        <div className="sticky top-0 bg-white w-full py-6 flex items-center justify-between z-50">
             <img src="logo.png" alt="logo" className="w-[32px] h-[32px]" />
             <div className="flex items-center gap-x-3">
                 <div className="flex gap-2 bg-gray-100 px-2.5 py-2 rounded-lg items-center">

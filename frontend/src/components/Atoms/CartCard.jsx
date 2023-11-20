@@ -1,7 +1,7 @@
 import TrashIcon from "../SVG/TrashIcon"
 
 
-export default function CartCard() {
+export default function CartCard({onAdd, onMinus, value=0}) {
     return (
 
         <div className="w-full px-2 py-1 pb-4 flex gap-4 border-b-2 border-gray-100 mb-4">
@@ -20,9 +20,9 @@ export default function CartCard() {
                     <p className="font-bold">Rp.300.000</p>
 
                     <div className="flex gap-2 items-center">
-                        <div>-</div>
-                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" />
-                        <div>+</div>
+                        <button onClick={onMinus}>-</button>
+                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={value} onChange={() => {}}/>
+                        <button onClick={onAdd}>+</button>
                     </div>
                 </div>
             </div>

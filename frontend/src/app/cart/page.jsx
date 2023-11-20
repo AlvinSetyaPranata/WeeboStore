@@ -1,12 +1,27 @@
+'use client'
+
+
 import CartCard from "@/components/Atoms/CartCard";
-
-
-export const metadata = {
-    title: 'Weebostore - Your cart'
-}
+import { useState, useEffect } from "react";
 
 export default function Cart() {
+
+    const [items, setItems] = useState(0)
+
+    const addHandler = () => setItems(latestvalue => latestvalue + 1)
+    const minusHandler = () => setItems(latestvalue => {
+        if (latestvalue > 0) return latestvalue - 1
+        return latestvalue
+    })
+
+
+    useEffect(() => {
+        document.title = "Weebostore - Your Cart"
+    }, [])
+
+
     return (
+
 
         <div className="px-8 py-12">
 
@@ -16,9 +31,9 @@ export default function Cart() {
 
                     <div className="flex w-full">
                         <div className="grid gap-8">
-                            <CartCard />
-                            <CartCard />
-                            <CartCard />
+                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
+                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
+                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
                         </div>
 
                     </div>
@@ -27,26 +42,26 @@ export default function Cart() {
                 {/* subtotal */}
                 <div className="px-8 w-1/3">
                     <h3 className="text-2xl font-bold">Sub Total</h3>
-                    <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6">
+                    <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6 overflow-y-auto max-h-[250px]">
 
                         {/* items */}
                         <div className="w-full flex justify-between items-center">
                             <div className="">
-                                <p className="font-semibold text-lg">Hello</p>
+                                <p className="font-semibold">Hello</p>
                                 <p>Rp.20.000</p>
                             </div>
                             <p className="font-bold text-gray-500">2 Item</p>
                         </div>
                         <div className="w-full flex justify-between items-center">
                             <div className="">
-                                <p className="font-semibold text-lg">Hello</p>
+                                <p className="font-semibold">Hello</p>
                                 <p>Rp.20.000</p>
                             </div>
                             <p className="font-bold text-gray-500">2 Item</p>
                         </div>
                         <div className="w-full flex justify-between items-center">
                             <div className="">
-                                <p className="font-semibold text-lg">Hello</p>
+                                <p className="font-semibold">Hello</p>
                                 <p>Rp.20.000</p>
                             </div>
                             <p className="font-bold text-gray-500">2 Item</p>

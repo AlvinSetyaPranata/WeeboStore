@@ -10,9 +10,9 @@ export default function Navbar() {
                 <input type="text" className="w-full outline-none bg-transparent text-sm" placeholder="Search here" />
             </div>
             <div className="flex items-center gap-x-3">
-                <div className="rounded-full p-2 bg-primary hover:cursor-pointer">
+                <Link className="rounded-full p-2 bg-primary hover:cursor-pointer" href="/account">
                     <AccountIcon className="w-[20px] h-[20px] stroke-none fill-white" />
-                </div>
+                </Link>
                 <Link href="/cart" className="rounded-full p-3 relative bg-primary hover:cursor-pointer before:w-[40px] before:h-[40px] before:z-20 before:bg-red-500 bg:absolute before:left-0">
                     <CartIcon className="w-[40px] h-[40px]" color="white"/>
                 </Link>

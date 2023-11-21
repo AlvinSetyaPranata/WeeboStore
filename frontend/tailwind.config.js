@@ -19,6 +19,9 @@ module.exports = {
       textColor: {
         'primary' : '#6DCBFF'
       },
+      fill: {
+        'primary' : '#6DCBFF'
+      },
       fontFamily: {
         'heading' : 'Inter, sans-serif'
       }

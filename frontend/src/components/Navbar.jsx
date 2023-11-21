@@ -1,7 +1,15 @@
+'use client'
+
+
 import Link from "next/link";
 import { AccountIcon, CartIcon } from "./SVG";
+import MarketIcon from "./SVG/MarketIcon";
+import { useState } from "react";
 
 export default function Navbar() {
+
+    const [active, setActive] = useState(1)
+
     return (
         <div className="sticky top-0 bg-white w-full py-6 flex items-center justify-between z-50 px-12">
             <img src="logo.png" alt="logo" className="w-[32px] h-[32px]" />
@@ -10,11 +18,14 @@ export default function Navbar() {
                 <input type="text" className="w-full outline-none bg-transparent text-sm" placeholder="Search here" />
             </div>
             <div className="flex items-center gap-x-3">
-                <Link className="rounded-full p-2 bg-primary hover:cursor-pointer" href="/account">
-                    <AccountIcon className="w-[20px] h-[20px] stroke-none fill-white" />
+                <Link onClick={() => setActive(1)} className={`rounded-full p-2 hover:cursor-pointer border-primary ${active==1 ? 'bg-primary border-none' : 'bg-white border-[1px]'}`} href="/">
+                    <MarketIcon className={`w-[20px] h-[20px] stroke-none ${active==1 ? 'fill-white' : 'fill-primary'}`} />
                 </Link>
-                <Link href="/cart" className="rounded-full p-3 relative bg-primary hover:cursor-pointer before:w-[40px] before:h-[40px] before:z-20 before:bg-red-500 bg:absolute before:left-0">
-                    <CartIcon className="w-[40px] h-[40px]" color="white"/>
+                <Link onClick={() => setActive(2)} className={`rounded-full p-2 hover:cursor-pointer border-primary ${active==2   ? 'bg-primary border-none' : 'bg-white border-[1px]'}`} href="/account">
+                    <AccountIcon className={`w-[20px] h-[20px] stroke-none ${active==2 ? 'fill-white' : 'fill-primary'}`} />
+                </Link>
+                <Link onClick={() => setActive(3)}href="/cart" className={`rounded-full p-2 hover:cursor-pointer border-primary ${active==3 ? 'bg-primary border-none' : 'bg-white border-[1px]'}`}>
+                    <CartIcon className="w-[20px] h-[20px] stroke-none" color={active==3 ? 'white' : '#6DCBFF'}/>
                 </Link>
             </div>
         </div>

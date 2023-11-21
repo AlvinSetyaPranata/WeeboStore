@@ -1,12 +1,37 @@
-import { AccountIcon } from "@/components/SVG"
+'use client'
 
-export const metadata = {
-    "title": "WeeboStore - AlvinSetya"
-}
+import { useState } from "react"
+import { AccountIcon } from "@/components/SVG"
+import Image from "next/image"
+
 
 export default function AccountLayout() {
+    const [edit, setEdit] = useState(false)
+
     return (
-        <div className="px-12 py-12">
+        <div className="px-12 py-12 space-y-12">
+            <div className="flex gap-x-8 items-center pb-6">
+                <div className="relative rounded-full w-[200px] h-[200px] overflow-hidden group hover:cursor-pointer">
+                    <Image
+                        src="/profile.jpg"
+                        alt="profile"
+                        fill
+                        style={{ objectFit: "cover" }}
+                    />
+
+                    {/* overlay */}
+                    <div className="absolute w-full h-full bg-[rgba(0,0,0,.5)] rounded-full flex justify-center items-center opacity-0 group-hover:opacity-100 transition-opacity duration-200 ease-in">
+                        <span className="text-white">Change</span>
+                    </div>
+                </div>
+                <div>
+                    <h1 className="font-bold text-3xl">Alvin Setya Pranata</h1>
+                    <h3 className="text-gray-500 mt-1">Gold Member</h3>
+                </div>
+            </div>
+
+
+            {/* forms */}
             <form>
                 <div className="space-y-12">
                     <div className="flex gap-x-16 border-b-[1px] border-gray-300 pb-8">
@@ -26,16 +51,6 @@ export default function AccountLayout() {
                                 <p className="text-sm text-gray-600 mt-2">Tell them about yourself</p>
                             </div>
 
-                            <div>
-                                <h3 className="text-sm font-heading">Photo</h3>
-
-                                <div className="flex gap-x-4 mt-4">
-                                    <div className="bg-gray-300 rounded-full p-2">
-                                        <AccountIcon className="fill-white w-[25px] h-[25px]" />
-                                    </div>
-                                    <button className="border-[1px] border-gray-300 font-semibold text-slate-800 rounded-md px-3 py-1 text-sm">Change</button>
-                                </div>
-                            </div>
                         </div>
                     </div>
 
@@ -92,8 +107,21 @@ export default function AccountLayout() {
                                 </div>
                             </div>
 
-                            <div className="flex justify-end">
-                                <button className="rounded-lg px-4 py-2 text-sm bg-blue-500 text-white">Edit</button>
+                            <div className="flex justify-end gap-2">
+
+                                {!edit &&
+                                    <button className="rounded-lg px-4 py-2 text-sm bg-blue-500 text-white" onClick={() => setEdit(true)}>Edit</button>
+                                }
+
+                                {/* button in edit state */}
+                                {edit &&
+                                    <>
+                                        <button className="rounded-lg px-4 py-2 text-sm bg-red-500 text-white" onClick={() => setEdit(false)}>Cancel</button>
+                                        <button className="rounded-lg px-4 py-2 text-sm bg-green-500 text-white">Change</button>
+                                    </>
+
+                                }
+
                             </div>
 
                         </div>

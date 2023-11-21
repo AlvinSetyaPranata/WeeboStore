@@ -10,6 +10,7 @@ import Link from "next/link"
 import HeadphoneIcon from "@/components/SVG/HeadphoneIcon"
 import QuestionMark from "@/components/SVG/QuestionMark"
 import InformationIcon from "@/components/SVG/InformationIcon"
+import Coupons from "@/components/Atoms/Coupons"
 
 
 export default function AccountLayout() {
@@ -60,8 +61,9 @@ export default function AccountLayout() {
 
             <div>
                 <h2 className="text-2xl font-semibold font-heading">Owned Coupons</h2>
-                <div className="space-y-12 rounded-lg p-2 border-[1px] border-gray-300 mt-4">
-                    <p>Hello</p>
+                <div className="space-y-6 rounded-lg p-2 py-8">
+                    <Coupons discount="30" title="30th April" desc="What happened in that day?"/>
+                    <Coupons discount="60" title="Ramadhan Special Sale" desc="Month of forgiveness and blessings"/>
                 </div>
 
             </div>

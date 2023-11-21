@@ -13,6 +13,12 @@ module.exports = {
       backgroundColor: {
         'primary' : '#6DCBFF'
       },
+      borderColor: {
+        'primary' : '#6DCBFF'
+      },
+      textColor: {
+        'primary' : '#6DCBFF'
+      },
       fontFamily: {
         'heading' : 'Inter, sans-serif'
       }

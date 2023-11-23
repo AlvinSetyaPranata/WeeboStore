@@ -1,7 +1,9 @@
+'use client'
+
 import Card from "@/components/Atoms/Card"
 import PromoCard from "@/components/Atoms/PromoCard"
 import HorizontalGroup from "@/components/Molecules/HorizontalGroup"
-
+import { motion } from "framer-motion"
 
 export default function Home() {
   return (
@@ -9,11 +11,11 @@ export default function Home() {
       <div className="pt-1 pb-12">
 
         {/* slider */}
-        <div className="w-full bg-primary h-[100vh] mt-8 mb-12 px-20 py-12 flex flex-col justify-start items-center relative">
-          <div className="flex items-center gap-12">
+        <div className="w-full bg-primary h-[100vh] mt-8 mb-12 px-20 py-12 flex flex-col justify-start items-ce nter relative">
+          <div className="flex items-center gap-12 justify-center">
 
             <div>
-              <h1 className="text-6xl font-semibold text-white">Memorial Day</h1>
+              <motion.h1 initial={{scale: 0}} animate={{scale: 1}} transition={{duration: 0.5, ease: 'easeIn'}} className="text-6xl font-semibold text-white">Memorial Day</motion.h1>
               <h3 className="text-2xl font-normal text-white">Creator is miss someone</h3>
             </div>
             <h1 className="text-7xl font-bold text-yellow-200">18th</h1>
@@ -21,19 +23,19 @@ export default function Home() {
 
 
           <div className="absolute bottom-3 grid grid-cols-3 gap-16">
-            <PromoCard label="Promo">
+            <PromoCard label="Promo" delay={0.1}>
               <img src="/card1.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card2.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card1.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card2.png" alt="test" className="w-[100px] h-[100px]" />
             </PromoCard>
-            <PromoCard label="Promo">
+            <PromoCard label="Promo" delay={0.3}>
               <img src="/card1.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card2.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card1.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card2.png" alt="test" className="w-[100px] h-[100px]" />
             </PromoCard>
-            <PromoCard label="Promo">
+            <PromoCard label="Promo" delay={0.5}>
               <img src="/card1.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card2.png" alt="test" className="w-[100px] h-[100px]" />
               <img src="/card1.png" alt="test" className="w-[100px] h-[100px]" />

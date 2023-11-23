@@ -11,6 +11,7 @@ import HeadphoneIcon from "@/components/SVG/HeadphoneIcon"
 import QuestionMark from "@/components/SVG/QuestionMark"
 import InformationIcon from "@/components/SVG/InformationIcon"
 import Coupons from "@/components/Atoms/Coupons"
+import { ArrowNext } from "@/components/SVG"
 
 
 export default function AccountLayout() {
@@ -60,7 +61,13 @@ export default function AccountLayout() {
 
 
             <div>
+                <div className="flex justify-between items-center w-full">
                 <h2 className="text-2xl font-semibold font-heading">Owned Coupons</h2>
+                <Link href="/account" className="flex items-center group">
+                    <p className="font-semibold text-primary text-sm group-hover:underline">Get more coupons</p>
+                    <ArrowNext className="w-[10px] h-[10px]" color="rgb(109, 203, 255)" />
+                </Link>
+                </div>
                 <div className="space-y-6 rounded-lg p-2 py-8">
                     <Coupons discount="30" title="30th April" desc="What happened in that day?"/>
                     <Coupons discount="60" title="Ramadhan Special Sale" desc="Month of forgiveness and blessings"/>

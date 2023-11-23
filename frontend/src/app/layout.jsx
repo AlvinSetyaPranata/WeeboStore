@@ -9,7 +9,7 @@ export default function RootLayout({ children }) {
         <title>Weebostore</title>
       </head>
       <body>
-          <Navbar />
+        <Navbar/>
           {children}
           <Footer />
       </body>

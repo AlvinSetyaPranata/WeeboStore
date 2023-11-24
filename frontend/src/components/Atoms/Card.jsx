@@ -1,9 +1,9 @@
 import Image from "next/image"
-
+import Link from "next/link"
 
 export default function Card() {
     return (
-        <div className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0 bg-white">
+        <Link className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0 bg-white" href="/details/1">
             <div className="relative w-full h-[180px] overflow-hidden">
                 <Image
                     src="/card1.png"
@@ -26,6 +26,6 @@ export default function Card() {
                     <p className="font-semibold">Rp.80.000</p>
                 </div>
             </div>
-        </div>
+        </Link>
     )
 }

@@ -5,7 +5,15 @@ import PromoCard from "@/components/Atoms/PromoCard"
 import HorizontalGroup from "@/components/Molecules/HorizontalGroup"
 import { motion } from "framer-motion"
 
-export default function Home() {
+
+export async function getServerSideProps() {
+    const res = await fetch('http://127.0.0.1:8000/api/products')
+    const data = await res.json()
+
+    return {props: { data }}
+}
+
+export default function Home({data}) {
     return (
         <main>
             <div className="pt-1 pb-12">

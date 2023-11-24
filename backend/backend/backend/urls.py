@@ -19,6 +19,9 @@ from django.urls import path
 from django.conf.urls.static import static
 from . import settings
 
+from products.views import *
+
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('api/products', ProductsView.as_view())
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

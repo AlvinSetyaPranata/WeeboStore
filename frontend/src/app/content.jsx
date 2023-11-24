@@ -6,14 +6,8 @@ import HorizontalGroup from "@/components/Molecules/HorizontalGroup"
 import { motion } from "framer-motion"
 
 
-export async function getServerSideProps() {
-    const res = await fetch('http://127.0.0.1:8000/api/products')
-    const data = await res.json()
-
-    return {props: { data }}
-}
-
 export default function Home({data}) {
+
     return (
         <main>
             <div className="pt-1 pb-12">
@@ -58,44 +52,16 @@ export default function Home({data}) {
 
                     <div className="mt-4 mb-12 grid gap-x-12 gap-y-16">
                         <HorizontalGroup label="Sword Art Online ">
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-
-                            <Card />
-                            <Card />
-
-                            <Card />
-                            <Card />
-                            <Card />
+                            {data.map((item, key) => <Card key={key} title={item.title} price={item.price} priceDiscount={item.discount_price} imageUrl={item.product_image} />)}
                         </HorizontalGroup>
-                        <HorizontalGroup label="Sword Art Online ">
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-                            <Card />
-
-                            <Card />
-                            <Card />
-
-                            <Card />
-                            <Card />
-                            <Card />
-                        </HorizontalGroup>
+                    
                     </div>
 
                     {/* main content */}
                     <h3 className="font-bold text-2xl mb-4">For you</h3>
                     <div className="w-full grid grid-cols-5 gap-4">
-                        <Card />
-                        <Card />
+                        {/* <Card /> */}
+                        {/* <Card />
                         <Card />
                         <Card />
                         <Card />
@@ -104,7 +70,7 @@ export default function Home({data}) {
                         <Card />
                         <Card />
                         <Card />
-                        <Card />
+                        <Card /> */}
                     </div>
                 </div>
 

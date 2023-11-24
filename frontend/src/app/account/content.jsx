@@ -1,5 +1,20 @@
 'use client'
 
+/*
+
+[
+    {
+        "id": 1,
+        "name": "Alvin Setya Pranata",
+        "description": "Ohayou nii-chan ^-^",
+        "member_type": "3",
+        "date_registered": "2023-11-24T22:07:20.706497Z"
+    }
+]
+
+
+*/
+
 import { useState } from "react"
 
 // Will use this in future if user haven't set profile photo yet 
@@ -37,9 +52,7 @@ export default function Account() {
                 <div>
                     <h1 className="font-bold text-3xl">Alvin Setya Pranata</h1>
                     <div className="flex gap-2 items-center">
-                        <h3 className="text-gray-500 mt-1 font-semibold">Gold Member</h3>
-                        <span>-</span>
-                        <h3 className="text-gray-500 mt-1">Buyyer</h3>
+                        <h3 className="text-gray-500 mt-1 font-semibold">Weebo Member</h3>
                     </div>
                 </div>
             </div>

@@ -23,7 +23,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.IntegerField()
     discount_price = models.IntegerField(blank=True, null=True, default=0)
-    product_image = models.ImageField(upload_to='images/', blank=True, null=True)
+    product_image = models.ImageField(upload_to='products/images/', blank=True, null=True)
     product_catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, default=Catagory.get_default_pk)
 
     def __str__(self):

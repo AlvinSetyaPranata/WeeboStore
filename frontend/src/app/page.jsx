@@ -1,4 +1,4 @@
-import { imageUrlResolver } from "@/utils/imageUrlResolver"
+// import { imageUrlResolver } from "@/utils/imageUrlResolver"
 import Home from "./content"
 
 export const metadata = {
@@ -25,5 +25,7 @@ export default async function Page() {
   // })
 
   // return <Home data={newData} />
-  return <Home />
+  return (
+    <Home />
+  )
 }

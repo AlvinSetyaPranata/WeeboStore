@@ -6,7 +6,6 @@ export const metadata = {
 
 
 export default function Page() {
-    return (
-        <Account />
-    )
+    return <Account />
+    
 }

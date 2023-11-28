@@ -6,7 +6,7 @@ import HorizontalGroup from "@/components/Molecules/HorizontalGroup"
 import { motion } from "framer-motion"
 
 
-export default function Home({data}) {
+export default function Home() {
 
     return (
         <main>
@@ -52,25 +52,32 @@ export default function Home({data}) {
 
                     <div className="mt-4 mb-12 grid gap-x-12 gap-y-16">
                         <HorizontalGroup label="Sword Art Online ">
-                            {data.map((item, key) => <Card key={key} title={item.title} price={item.price} priceDiscount={item.discount_price} imageUrl={item.product_image} />)}
+                            {/* {data.map((item, key) => <Card key={key} title={item.title} price={item.price} priceDiscount={item.discount_price} imageUrl={item.product_image} />)} */}
+                            <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                            <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+                            <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                            <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+                            <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                            <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+                            <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                            <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+                            <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                            <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+
                         </HorizontalGroup>
-                    
+
                     </div>
 
                     {/* main content */}
                     <h3 className="font-bold text-2xl mb-4">For you</h3>
                     <div className="w-full grid grid-cols-5 gap-4">
-                        {/* <Card /> */}
-                        {/* <Card />
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card />
+                        <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                        <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+                        <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                        <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
+                        <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
+                        <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
 
-                        <Card />
-                        <Card />
-                        <Card />
-                        <Card /> */}
                     </div>
                 </div>
 

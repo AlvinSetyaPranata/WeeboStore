@@ -26,13 +26,15 @@ export default function Cart() {
                             <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
                             <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
                             <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
+                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
+                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
                         </div>
 
                     </div>
                 </div>
 
                 {/* subtotal */}
-                <div className="px-8 w-1/3">
+                <div className="px-8 w-1/3 fixed right-4 bg-white">
                     <h3 className="text-2xl font-bold">Sub Total</h3>
                     <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6 overflow-y-auto max-h-[250px]">
 

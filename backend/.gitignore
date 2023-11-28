@@ -1,8 +1,0 @@
-# created by virtualenv automatically
-bin
-lib
-pyvenv.cfg
-*.sqlite3
-backend/media
-**/__pycache__
-backend/static

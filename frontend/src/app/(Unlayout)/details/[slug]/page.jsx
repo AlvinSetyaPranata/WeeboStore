@@ -2,7 +2,7 @@ import Details from "./content"
 
 
 export const metadata = {
-    "title": "Weebostore - Your cart"
+    "title": "Weebostore - Product"
 }
 
 export default function Page() {

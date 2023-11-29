@@ -22,7 +22,7 @@ export default function Card({title, price, priceDiscount, imageUrl}) {
                 </div>
 
                 <div className="flex w-full justify-between items-center">
-                    {priceDiscount!=0 && <p className="text-sm line-through text-slate-400">Rp.{priceDiscount}</p>}
+                    {priceDiscount!=0 && priceDiscount && <p className="text-sm line-through text-slate-400">Rp.{priceDiscount}</p>}
                     <p className="font-semibold">Rp.{price}</p>
                 </div>
             </div>

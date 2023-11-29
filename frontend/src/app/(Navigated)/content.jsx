@@ -63,16 +63,13 @@ export default function Home() {
                         <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
                         <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
                         <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
-                        <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
-                        <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
-
                     </HorizontalGroup>
 
                 </div>
 
                 {/* main content */}
                 <h3 className="font-bold text-2xl mb-4">For you</h3>
-                <div className="w-full grid grid-cols-5 gap-4">
+                <div className="w-full grid grid-cols-5 gap-x-1 gap-y-4   ">
                     <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
                     <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
                     <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />

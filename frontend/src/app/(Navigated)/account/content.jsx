@@ -27,7 +27,6 @@ import QuestionMark from "@/components/SVG/QuestionMark"
 import InformationIcon from "@/components/SVG/InformationIcon"
 import Coupons from "@/components/Atoms/Coupons"
 import { ArrowNext } from "@/components/SVG"
-import { AnimatePresence } from "framer-motion"
 
 
 export default function Account() {

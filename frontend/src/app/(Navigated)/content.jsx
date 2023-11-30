@@ -13,7 +13,7 @@ export default function Home() {
         <div className="pt-1 pb-12">
 
             {/* slider */}
-            <div className="w-full bg-primary h-[100vh] mt-8 mb-12 px-20 py-12 flex flex-col justify-start items-center relative">
+            <div className="w-full bg-primary h-[700px] mt-8 mb-12 px-20 py-12 flex flex-col justify-start items-center relative">
                 <div className="flex items-center gap-12 justify-center">
 
                     <div>

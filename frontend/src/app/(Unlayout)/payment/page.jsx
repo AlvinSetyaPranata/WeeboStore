@@ -3,7 +3,7 @@ import Payment from './content'
 
 
 export const metadata = {
-  "title" : "Weebostore - Shipping Information"
+  "title" : "Weebostore - Payment"
 }
 
 export default function Page() {

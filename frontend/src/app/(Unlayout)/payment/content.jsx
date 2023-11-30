@@ -1,8 +1,19 @@
+'use client'
+
+
 import SelectCard from '@/components/Atoms/SelectCard'
 import SelectCardContainer from '@/components/Molecules/SelectCardContainer'
-import React from 'react'
+import PaymentMethodGroup from '@/components/Organisms/PaymentMethodGroup'
+import Link from 'next/link'
+import React, { useState } from 'react'
+
 
 export default function Payment() {
+
+
+  const [paymentMethod, setPaymentMethod] = useState("Bank")
+
+
   return (
     <div className='grid place-items-center py-12 w-full h-full'>
       <div className='container px-8 py-12'>
@@ -60,12 +71,25 @@ export default function Payment() {
             </div>
             {/* delivery method */}
 
-            <SelectCardContainer className='py-12 border-t-[1.5px] border-gray-300 mt-12'>
-              <SelectCard />
-              <SelectCard />
+            <SelectCardContainer className='py-12 border-t-[1.5px] border-gray-300 mt-12' label="Delivery Method" onCardSelected={setPaymentMethod}>
+              <SelectCard name="JNE" desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
+              <SelectCard name="JNT" desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
+              <SelectCard name="Pos Indonesia" desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
+              <SelectCard name="Si Cepat  " desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
             </SelectCardContainer>
 
+            <div className='py-12 border-t-[1.5px] border-gray-300 mt-12'>
+              <PaymentMethodGroup />
+            </div>
+
+            <div className='mt-4 flex gap-x-4'>
+              <Link href="/cart" className='mt-4 w-1/2 bg-red-500 py-4 rounded-md font-semibold text-white text-center'>Cancel</Link>
+              <button className='mt-4 w-1/2 bg-primary py-4 rounded-md font-semibold text-white'>Checkout order</button>
+            </div>
+
           </div>
+
+
 
 
         </form>

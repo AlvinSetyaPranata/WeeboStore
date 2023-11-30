@@ -13,7 +13,7 @@ export default function PromoCard({ label, images }) {
             variants={variants}
             transition={{ duration: 0.5, ease: easeIn }}
             className="bg-white px-6 py-4">
-            <h3 className="font-semibold text-3xl mb-8">{label}</h3>
+            <h3 className="font-semibold text-3xl lg:text-2xl mb-8">{label}</h3>
             <div className="grid grid-cols-2 gap-4 mb-4">
                 {images.map((image, key) => (
                     <Image src={image} width={200} height={200} key={key}/>

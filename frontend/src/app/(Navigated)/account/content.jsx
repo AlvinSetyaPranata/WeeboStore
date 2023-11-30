@@ -77,7 +77,7 @@ export default function Account() {
                 <div className="flex justify-between items-center w-full">
                     <h2 className="text-2xl font-semibold font-heading">Owned Coupons</h2>
                     <Link href="/account" className="flex items-center group">
-                        <p className="font-semibold text-primary text-sm group-hover:underline">Get more coupons</p>
+                        <p className="font-semibold text-primary text-sm group-hover:underline">More about coupons</p>
                         <ArrowNext className="w-[10px] h-[10px]" color="rgb(109, 203, 255)" />
                     </Link>
                 </div>

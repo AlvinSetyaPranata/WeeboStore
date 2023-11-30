@@ -12,7 +12,7 @@ export default function CartCard({onAdd, onMinus, value=0}) {
             <div className="flex flex-col justify-between">
                 <div>
 
-                    <label className="font-semibold text-lg">Jaket cosplay asuna - Sword Art online</label>
+                    <label className="font-semibold text-lg line-clamp-1">Jaket cosplay asuna - Sword Art online</label>
                     <p className="text-green-600 text-sm">Stock Available</p>
                 </div>
 

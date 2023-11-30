@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 // import Image from "next/image";
 
 
-export default function () {
+export default function Navbar() {
 
     const [active, setActive] = useState(1)
     const pathname = usePathname()

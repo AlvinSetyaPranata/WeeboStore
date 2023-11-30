@@ -6,7 +6,7 @@ import { AccountIcon, CartIcon } from "./SVG";
 import MarketIcon from "./SVG/MarketIcon";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import Image from "next/image";
+// import Image from "next/image";
 
 
 export default function Navbar() {

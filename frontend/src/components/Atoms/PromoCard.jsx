@@ -16,7 +16,7 @@ export default function PromoCard({ label, images }) {
             <h3 className="font-semibold text-3xl lg:text-2xl mb-8">{label}</h3>
             <div className="grid grid-cols-2 gap-4 mb-4">
                 {images.map((image, key) => (
-                    <Image src={image} width={200} height={200} key={key}/>
+                    <Image alt="promo-card" src={image} width={200} height={200} key={key}/>
                 ))}
             </div>
             <div className="flex justify-end">

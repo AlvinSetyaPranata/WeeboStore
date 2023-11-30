@@ -9,6 +9,7 @@ export default function Card({title, price, priceDiscount, imageUrl}) {
                     src={imageUrl}
                     alt="card"
                     fill
+                    sizes="(min-width: 808px) 50vw, 100vw"
                     style={{objectFit: "cover"}}
                 />
             </div>

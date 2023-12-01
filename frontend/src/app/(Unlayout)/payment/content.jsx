@@ -4,6 +4,7 @@
 import SelectCard from '@/components/Atoms/SelectCard'
 import SelectCardContainer from '@/components/Molecules/SelectCardContainer'
 import PaymentMethodGroup from '@/components/Organisms/PaymentMethodGroup'
+import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
 
@@ -78,9 +79,71 @@ export default function Payment() {
               <SelectCard name="Si Cepat  " desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
             </SelectCardContainer>
 
+            {/* payment method use conditional rendering based on what option
+            is selected  */}
+
             <div className='py-12 border-t-[1.5px] border-gray-300 mt-12'>
               <PaymentMethodGroup />
             </div>
+
+
+            <div className='py-12 border-t-[1.5px] border-gray-300 mt-12'>
+              <h2 className='text-2xl font-heading font-semibold'>Order Summary</h2>
+
+              {/* summary container */}
+              <div className='mt-8 border-[1.5px] border-gray-200 px-4 pb-8 pt-4 grid gap-y-2'>
+
+                {/* items */}
+                <div className='py-6 border-b-[1.5px] border-gray-300 flex gap-x-4'>
+
+                  {/* next-image container */}
+                  <div className='relative w-[120px] h-[120px]'>
+                    <Image src="/card1.png" alt="card" fill style={{ objectFit: 'cover' }} sizes="(min-width: 808px) 50vw, 100vw" />
+                  </div>
+                  {/* desc */}
+                  <div>
+                    <h4 className='font-heading'>Sword Art Online - Asuna Cosplay</h4>
+                    <p className='font-heading text-gray-400'>3 Items</p>
+
+                    <p className='font-heading font-semibold mt-12'>Rp.3000.000</p>
+                  </div>
+                </div>
+                <div className='py-6 border-b-[1.5px] border-gray-300 flex gap-x-4'>
+
+                  {/* next-image container */}
+                  <div className='relative w-[120px] h-[120px]'>
+                    <Image src="/card1.png" alt="card" fill style={{ objectFit: 'cover' }} sizes="(min-width: 808px) 50vw, 100vw" />
+                  </div>
+                  {/* desc */}
+                  <div>
+                    <h4 className='font-heading'>Sword Art Online - Asuna Cosplay</h4>
+                    <p className='font-heading text-gray-400'>3 Items</p>
+
+                    <p className='font-heading font-semibold mt-12'>Rp.3000.000</p>
+                  </div>
+                </div>
+                <div className='py-6 border-b-[1.5px] border-gray-300 flex gap-x-4'>
+
+                  {/* next-image container */}
+                  <div className='relative w-[120px] h-[120px]'>
+                    <Image src="/card1.png" alt="card" fill style={{ objectFit: 'cover' }} sizes="(min-width: 808px) 50vw, 100vw" />
+                  </div>
+                  {/* desc */}
+                  <div>
+                    <h4 className='font-heading'>Sword Art Online - Asuna Cosplay</h4>
+                    <p className='font-heading text-gray-400'>3 Items</p>
+
+                    <p className='font-heading font-semibold mt-12'>Rp.3000.000</p>
+                  </div>
+                </div>
+
+
+
+
+              </div>
+            </div>
+
+
 
             <div className='mt-4 flex gap-x-4'>
               <Link href="/cart" className='mt-4 w-1/2 bg-red-500 py-4 rounded-md font-semibold text-white text-center'>Cancel</Link>

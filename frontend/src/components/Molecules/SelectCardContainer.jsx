@@ -7,7 +7,8 @@ export default function SelectCardContainer({ children, className, label, onSele
 
     const selectedHandler = (name, key) => {
         setSelected(key)
-        onSelected(name)
+
+        if (onSelected) onSelected(name)
 
     }
 

@@ -15,6 +15,8 @@ export default function Navbar() {
     const pathname = usePathname()
 
     useEffect(() => {
+        console.log(pathname)
+
         switch (pathname) {
             case "/":
                 setActive(1)

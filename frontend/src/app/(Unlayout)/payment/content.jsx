@@ -72,7 +72,7 @@ export default function Payment() {
             </div>
             {/* delivery method */}
 
-            <SelectCardContainer className='py-12 border-t-[1.5px] border-gray-300 mt-12' label="Delivery Method" onCardSelected={setPaymentMethod}>
+            <SelectCardContainer className='py-12 border-t-[1.5px] border-gray-300 mt-12' label="Delivery Method">
               <SelectCard name="JNE" desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
               <SelectCard name="JNT" desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
               <SelectCard name="Pos Indonesia" desc="Estimated time 1 May - 4 June" price="Rp. 10.000" />
@@ -137,10 +137,31 @@ export default function Payment() {
                   </div>
                 </div>
 
+                {/* subtotal, and others */}
+                <div className='w-full grid gap-y-4 mt-4'>
+                  <div className='w-full flex justify-between items-center'>
+                    <p className='text-slate-400'>Subtotal</p>
+                    <p className='text-slate-800 font-semibold'>Rp.3000.000</p>
+                  </div>
+                  <div className='w-full flex justify-between items-center'>
+                    <p className='text-slate-400'>Discount</p>
+                    <p className='text-slate-800 font-semibold'>Rp.-30.000</p>
+                  </div>
+                  <div className='w-full flex justify-between items-center'>
+                    <p className='text-slate-400'>Provider Taxes</p>
+                    <p className='text-slate-800 font-semibold'>Rp.2.000</p>
+                  </div>
+                  <div className='w-full flex justify-between items-center'>
+                    <p className='text-slate-400'>Total</p>
+                    <p className='text-slate-800 font-semibold'>Rp.2.700.000</p>
+                  </div>
+                </div>
 
-
+                {/* end of subtotal, and others */}
 
               </div>
+
+
             </div>
 
 

@@ -1,16 +1,13 @@
 'use client'
 
 import CartCard from "@/components/Atoms/CartCard";
-import { useState } from "react";
+import Link from "next/link";
 
 export default function Cart() {
-    const [items, setItems] = useState(0)
 
-    const addHandler = () => setItems(latestvalue => latestvalue + 1)
-    const minusHandler = () => setItems(latestvalue => {
-        if (latestvalue > 0) return latestvalue - 1
-        return latestvalue
-    })
+    const onChange = (value) => {
+        console.log(value)
+    }
 
 
     return (
@@ -22,8 +19,8 @@ export default function Cart() {
 
                     <div className="flex w-full">
                         <div className="grid gap-8">
-                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
-                            <CartCard onAdd={addHandler} onMinus={minusHandler} value={items} />
+                            <CartCard next={onChange} />
+                            <CartCard next={onChange} />
                         </div>
 
                     </div>
@@ -70,7 +67,9 @@ export default function Cart() {
                                 <p className="font-bold">Rp.80.000</p>
                             </div>
                         </div>
-                        <button className="w-full mt-5 bg-primary rounded-lg py-2 font-semibold text-white outline-none">Buy</button>
+                        <button className="w-full mt-5 bg-primary rounded-lg py-2 font-semibold text-white outline-none">
+                            <Link href="/payment">Go to payment page</Link>
+                        </button>
                     </div>
                 </div>
             </div>

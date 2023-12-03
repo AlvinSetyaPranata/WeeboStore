@@ -2,9 +2,27 @@
 
 import Image from "next/image"
 import TrashIcon from "../SVG/TrashIcon"
+import { useState, useEffect } from "react"
 
 
-export default function CartCard({ onAdd, onMinus, value = 0, loading = false }) {
+export default function CartCard({ next }) {
+    const [value, setValue] = useState(0)
+
+    const updateValue = (method) => {
+        switch(method) {
+            case "MIN":
+                if (value <= 0) return 
+                setValue(newVal => newVal - 1)
+                return
+            case "ADD":
+                if (value > 10) return 
+                setValue(newVal => newVal + 1)
+                return
+        }
+    }
+
+
+    useEffect(() => next(value), [value])
 
     return (
 
@@ -29,9 +47,9 @@ export default function CartCard({ onAdd, onMinus, value = 0, loading = false })
                     <p className="font-bold">Rp.300.000</p>
 
                     <div className="flex gap-2 items-center">
-                        <button onClick={onMinus}>-</button>
-                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={value} onChange={() => { }} />
-                        <button onClick={onAdd}>+</button>
+                        <button onClick={() => updateValue("MIN")}>-</button>
+                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={value} onChange={()=>{}} />
+                        <button onClick={() => updateValue("ADD")}>+</button>
                     </div>
                 </div>
             </div>

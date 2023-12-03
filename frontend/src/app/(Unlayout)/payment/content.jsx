@@ -12,9 +12,6 @@ import React, { useState } from 'react'
 export default function Payment() {
 
 
-  const [paymentMethod, setPaymentMethod] = useState("Bank")
-
-
   return (
     <div className='grid place-items-center py-12 w-full h-full'>
       <div className='container px-8 py-12'>

@@ -6,6 +6,7 @@ import { AccountIcon, CartIcon } from "../SVG";
 import MarketIcon from "../SVG/MarketIcon";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
+import ClockIcon from "../SVG/ClockIcon";
 // import Image from "next/image";
 
 
@@ -15,7 +16,6 @@ export default function Navbar() {
     const pathname = usePathname()
 
     useEffect(() => {
-        console.log(pathname)
 
         switch (pathname) {
             case "/":
@@ -26,6 +26,9 @@ export default function Navbar() {
                 break
             case "/cart":
                 setActive(3)
+                break
+            case "/transactions":
+                setActive(4)
                 break
             default:
                 setActive(0)
@@ -51,6 +54,9 @@ export default function Navbar() {
                 </Link>
                 <Link onClick={() => setActive(2)} className={`rounded-full p-2 hover:cursor-pointer border-primary ${active == 2 ? 'bg-primary border-none' : 'bg-white border-[1px]'}`} href="/account">
                     <AccountIcon className={`w-[20px] h-[20px] stroke-none ${active == 2 ? 'fill-white' : 'fill-primary'}`} />
+                </Link>
+                <Link onClick={() => setActive(4)} className={`rounded-full p-2 hover:cursor-pointer border-primary ${active == 4 ? 'bg-primary border-none' : 'bg-white border-[1px]'}`} href="/transactions">
+                    <ClockIcon className={`w-[20px] h-[20px] stroke-none ${active == 4 ? 'fill-white' : 'fill-primary'}`} />
                 </Link>
             </div>
         </div>

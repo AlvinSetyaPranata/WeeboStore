@@ -22,8 +22,8 @@ export default function Card({title, price, priceDiscount, imageUrl}) {
                     <div className="px-2 py-1 text-xs bg-red-500 text-white font-semibold">HOT SALE</div>
                 </div>
 
-                <div className="flex w-full justify-between items-center">
-                    {priceDiscount!=0 && priceDiscount ? <p className="text-sm line-through text-slate-400">Rp.{priceDiscount}</p> : <p>.</p>}
+                <div className="flex flex-row-reverse w-full justify-between items-center">
+                    {priceDiscount!=0 && priceDiscount && <p className="text-sm line-through text-slate-400">Rp.{priceDiscount}</p> }
                     <p className="font-semibold">Rp.{price}</p>
                 </div>
             </div>

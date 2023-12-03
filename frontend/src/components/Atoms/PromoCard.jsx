@@ -12,11 +12,13 @@ export default function PromoCard({ label, images }) {
         <motion.div
             variants={variants}
             transition={{ duration: 0.5, ease: easeIn }}
-            className="bg-white px-6 py-4">
+            className="bg-white px-6 py-4 box-border">
             <h3 className="font-semibold text-3xl lg:text-2xl mb-8">{label}</h3>
             <div className="grid grid-cols-2 gap-4 mb-4">
                 {images.map((image, key) => (
-                    <Image alt="promo-card" src={image} width={200} height={200} key={key}/>
+                    <div className="relative w-[120px] h-[120px]">
+                        <Image alt="promo-card" src={image} fill key={key} style={{objectFit: "cover"}}/>
+                    </div>
                 ))}
             </div>
             <div className="flex justify-end">

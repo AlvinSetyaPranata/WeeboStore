@@ -5,6 +5,7 @@ import TrashIcon from "../SVG/TrashIcon"
 
 
 export default function CartCard({ onAdd, onMinus, value = 0, loading = false }) {
+
     return (
 
         <div className="w-full px-2 py-1 pb-4 flex gap-4 border-b-2 border-gray-100 mb-4">
@@ -12,12 +13,9 @@ export default function CartCard({ onAdd, onMinus, value = 0, loading = false })
                 <TrashIcon color="red" />
 
                 <div className="w-[120px] h-[120px] ml-3 relative">
-                    { loading ?
-                        <div className="min-w-full min-h-full bg-gray-500"></div> 
-                        :
-                        <Image src="/card1.png" alt="example" fill style={{objectFit: 'cover'}} />
-                    }
-                    
+
+                    <Image src="/card1.png" alt="example" fill style={{ objectFit: 'cover' }} />
+
                 </div>
             </div>
             <div className="flex flex-col justify-between">

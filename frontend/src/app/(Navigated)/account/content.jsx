@@ -27,6 +27,7 @@ import QuestionMark from "@/components/SVG/QuestionMark"
 import InformationIcon from "@/components/SVG/InformationIcon"
 import Coupons from "@/components/Atoms/Coupons"
 import { ArrowNext } from "@/components/SVG"
+import ClockIcon from "@/components/SVG/ClockIcon"
 
 
 export default function Account() {
@@ -98,24 +99,22 @@ export default function Account() {
                 <div className="space-y-12 rounded-lg p-2 border-[1px] border-gray-300 mt-4">
                     <div className="w-full px-3 py-4 space-y-8">
 
-                        {/* action buttons */}
-                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6">
+                        {/* CTA buttons */}
+                        <Link href="/transactions" className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
+                            <ClockIcon className="w-[20px] h-[20px]" />
+                            Transactions history
+                        </Link>
+                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
                             <HeadphoneIcon color="black" className="w-[20px] h-[20px]" />
-                            <Link href="/account" className="text-sm text-slate-600">
-                                Contact us
-                            </Link>
+                            Contact us
                         </div>
-                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6">
+                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
                             <QuestionMark className="w-[20px] h-[20px]" color="black" />
-                            <Link href="/account" className="text-sm text-slate-600">
                                 Need Help
-                            </Link>
                         </div>
-                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6">
+                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
                             <InformationIcon className="w-[20px] h-[20px]" color="black" />
-                            <Link href="/account" className="text-sm text-slate-600">
                                 About us
-                            </Link>
                         </div>
 
 

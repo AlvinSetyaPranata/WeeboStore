@@ -1,5 +1,6 @@
-import CartCard from '@/components/Atoms/CartCard'
 import React from 'react'
+import CardCartSkeleton from '@/components/Atoms/skeletons/CardCartSkeleton'
+
 
 export default function Loading() {
     return (
@@ -8,10 +9,10 @@ export default function Loading() {
                 <div className="flex-1">
                     <h2 className="text-2xl text-gray-500 font-semibold mb-8">Your Cart</h2>
 
-                    <div className="flex w-full">
-                        <div className="grid gap-8">
-                            <CartCard loading={true} />
-                            <CartCard loading={true} />
+                    <div className="flex">
+                        <div className="grid gap-8 min-w-[50%]">
+                            <CardCartSkeleton />
+                            <CardCartSkeleton />
                         </div>
 
                     </div>
@@ -21,29 +22,30 @@ export default function Loading() {
                 <div className="px-8 w-1/3 bg-white">
                     <div className="sticky top-0">
 
-                        <h3 className="text-2xl font-bold">Sub Total</h3>
+                        {/* subtotal-header */}
+                        <div className='bg-gray-500 w-[100px] h-[20px]'></div>
                         <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6">
 
                             {/* items */}
                             <div className="w-full flex justify-between items-center">
-                                <div className="">
-                                    <p className="font-semibold line-clamp-2">Jaket cosplay asuna - Sword Art online</p>
-                                    <p>Rp.20.000</p>
+                                <div>
+                                    <div className='bg-gray-500 w-[20px] h-[10px]'></div>
+                                    <div className='bg-gray-500 min-w-full h-[10px]'></div>
                                 </div>
-                                <p className="font-bold text-gray-500">2x</p>
-                            </div>
+                                {/* total-item */}
+                                <div className='bg-gray-500 min-w-full h-[20px]'></div>                            </div>
                             <div className="w-full flex justify-between items-center">
-                                <div className="">
-                                    <p className="font-semibold line-clamp-2">Jaket cosplay asuna - Sword Art online</p>
-                                    <p>Rp.20.000</p>
+                                <div>
+                                    <div className='bg-gray-500 w-[20px] h-[10px]'></div>
+                                    <div className='bg-gray-500 min-w-full h-[10px]'></div>
                                 </div>
-                                <p className="font-bold text-gray-500">2x</p>
+                                <div className='bg-gray-500 min-w-full h-[20px]'></div>
                             </div>
 
                             {/* items */}
 
                         </div>
-                        <p className="text-right mt-1 font-semibold text-primary underline-offset-2 hover:underline hover:cursor-pointer">use coupons</p>
+                        <div className='bg-gray-500 min-w-full h-[20px]'></div>
                         <div className="mt-4 grid gap-2">
                             <div className="flex justify-between items-center">
                                 <p className="font-semibold text-gray-500">Price Total</p>

@@ -1,6 +1,7 @@
 'use client'
 
 import Card from "@/components/Atoms/Card"
+import CatagoryCard from "@/components/Atoms/CatagoryCard"
 import PromoCard from "@/components/Atoms/PromoCard"
 import HorizontalGroup from "@/components/Molecules/HorizontalGroup"
 import PromoCardContiner from "@/components/Molecules/PromoCardContiner"
@@ -13,7 +14,7 @@ export default function Home() {
         <div className="pt-1 pb-12">
 
             {/* slider */}
-            <div className="w-full bg-primary h-[700px] mt-8 mb-12 px-20 py-12 flex flex-col justify-start items-center relative">
+            <div className="w-full bg-primary h-max mt-8 mb-12 p-12 flex flex-col justify-start items-center relative box-border">
                 <div className="flex items-center gap-12 justify-center">
 
                     <div>
@@ -41,17 +42,32 @@ export default function Home() {
                 </div>
 
 
-                <PromoCardContiner className="absolute top-[300px] left-0 px-8 grid grid-cols-3 gap-16" delay={1}>
+                <PromoCardContiner className="top-[300px] left-0 px-8 grid grid-cols-3 gap-16 mt-24 w-max" delay={1}>
                     <PromoCard label="Promo" images={["/card1.png", "/card2.png", "/card2.png", "/card1.png"]} />
                     <PromoCard label="Promo" images={["/card1.png", "/card2.png", "/card2.png", "/card1.png"]} />
                     <PromoCard label="Promo" images={["/card1.png", "/card2.png", "/card2.png", "/card1.png"]} />
                 </PromoCardContiner>
+
+
+                <div className="mt-6 w-full px-4 box-border">
+                    <div className="grid grid-cols-3 mt-4 gap-y-4 gap-x-12">
+                        <CatagoryCard />
+                        <CatagoryCard />
+                        <CatagoryCard />
+                        <CatagoryCard />
+                        <CatagoryCard />
+                        <CatagoryCard />
+                    </div>
+                </div>
             </div>
 
 
-
+            {/* main */}
             <div className="px-12 mt-4">
 
+
+
+                {/* slides by Popular  */}
                 <div className="mt-4 mb-12 grid gap-x-12 gap-y-16">
                     <HorizontalGroup label="Sword Art Online ">
                         {/* {data.map((item, key) => <Card key={key} title={item.title} price={item.price} priceDiscount={item.discount_price} imageUrl={item.product_image} />)} */}

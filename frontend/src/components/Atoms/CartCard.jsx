@@ -2,27 +2,37 @@
 
 import Image from "next/image"
 import TrashIcon from "../SVG/TrashIcon"
-import { useState, useEffect } from "react"
+import { useReducer } from "react"
 
 
 export default function CartCard({ next }) {
-    const [value, setValue] = useState(0)
+    const updateValueReducer = (state, action) => {
+        let newState = {}
 
-    const updateValue = (method) => {
-        switch(method) {
+        switch(action.type) {
             case "MIN":
-                if (value <= 0) return 
-                setValue(newVal => newVal - 1)
-                return
+                if (state.value <= 0) {
+                    newState["value"] = state.value
+                } else {
+                    newState["value"] = state.value - 1
+                }
+                break
+
             case "ADD":
-                if (value > 10) return 
-                setValue(newVal => newVal + 1)
-                return
+                if (state.value >= 10) {
+                    newState["value"] = state.value
+                } else {
+                    newState["value"] = state.value + 1
+                }
+                break          
         }
+        next(state.value)
+
+        return newState
     }
 
 
-    useEffect(() => next(value), [value])
+    const [state, dispatch] = useReducer(updateValueReducer, {value: 0})
 
     return (
 
@@ -47,9 +57,9 @@ export default function CartCard({ next }) {
                     <p className="font-bold">Rp.300.000</p>
 
                     <div className="flex gap-2 items-center">
-                        <button onClick={() => updateValue("MIN")}>-</button>
-                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={value} onChange={()=>{}} />
-                        <button onClick={() => updateValue("ADD")}>+</button>
+                        <button onClick={() => dispatch({type: "MIN"})}>-</button>
+                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={()=>{}} />
+                        <button onClick={() => dispatch({type: "ADD"})}>+</button>
                     </div>
                 </div>
             </div>

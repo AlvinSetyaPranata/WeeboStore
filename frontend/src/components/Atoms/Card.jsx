@@ -3,7 +3,7 @@ import Link from "next/link"
 
 export default function Card({title, price, priceDiscount, imageUrl}) {
     return (
-        <Link className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0 bg-white" href="/details/1">
+        <Link className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0 bg-white" href={`/details?product=${title}`} replace>
             <div className="relative w-full h-[180px] overflow-hidden rounded-lg hover:cursor-pointer">
                 <Image
                     src={imageUrl}

@@ -5,7 +5,7 @@ import SelectCard from '../Atoms/SelectCard'
 import MerchantForm from '../Atoms/payments/MerchantForm'
 
 export default function PaymentMethodGroup() {
-    const [selected, setSelected] = useState()
+    const [selected, setSelected] = useState("Bank")
 
     return (
         <>

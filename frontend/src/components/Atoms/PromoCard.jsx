@@ -16,8 +16,8 @@ export default function PromoCard({ label, images }) {
             <h3 className="font-semibold text-3xl lg:text-2xl mb-8">{label}</h3>
             <div className="grid grid-cols-2 gap-4 mb-4">
                 {images.map((image, key) => (
-                    <div className="relative w-[120px] h-[120px]">
-                        <Image alt="promo-card" src={image} fill key={key} style={{objectFit: "cover"}}/>
+                    <div className="relative w-[120px] h-[120px]" key={key}>
+                        <Image alt="promo-card" src={image} fill style={{objectFit: "cover"}}/>
                     </div>
                 ))}
             </div>

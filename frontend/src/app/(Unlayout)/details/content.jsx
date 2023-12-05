@@ -5,28 +5,32 @@ import Card from "@/components/Atoms/Card";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useReducer, useState } from "react";
 
 export default function Details() {
     const [expanded, setExpanded] = useState(false)
     const [image, setImage] = useState(1)
-    const [qty, setQty] = useState(0)
     const router = useRouter()
 
+    const qtyReducer = (state, action) => {
+        switch (action.type) {
+            case "MIN":
+                if (state.value < 0) return { value: state.value }
+                return { value: state.value - 1 }
+            case "ADD":
+                if (state.value >= 10) return { value: state.value }
+                return { value: state.value + 1 }
+            default:
+                console.log(state.value)
+                if (state.value >= 10 && state.value < 0 && !state.isFocused) {
+                    return { value: 0 }
+                }
+                return { value: action.value }
 
-    const handleMinus = () => {
-        if (qty < 0) return
-
-        setQty(latestValue => latestValue - 1)
+        }
     }
 
-    const handleAdd = () => {
-
-        // change later to total items
-        if (qty > 10) return
-
-        setQty(latestValue => latestValue + 1)
-    }
+    const [state, dispatch] = useReducer(qtyReducer, { value: 0, isFocused: false })
 
 
     const handleAddCart = () => {
@@ -98,9 +102,9 @@ export default function Details() {
                             <h3 className="font-bold text-xl">Rp 15.000</h3>
                         </div>
                         <div className="flex gap-2 items-center">
-                            <button onClick={handleMinus}>-</button>
-                            <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={qty} onChange={() => { }} />
-                            <button onClick={handleAdd}>+</button>
+                            <button onClick={() => dispatch({ type: "MIN" })}>-</button>
+                            <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={(e) => dispatch({type: "", value: e.target.value, isFocused: true})} onFocus={() => dispatch({type: "", isFocused: true})} onBlur={() => dispatch({type: "", isFocused: false})}/>
+                            <button onClick={() => dispatch({ type: "ADD" })}>+</button>
                         </div>
                     </div>
 

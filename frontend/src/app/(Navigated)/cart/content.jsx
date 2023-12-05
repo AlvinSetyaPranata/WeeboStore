@@ -48,7 +48,7 @@ export default function Cart() {
                                 </div>
                                 <p className="font-bold text-gray-500">2x</p>
                             </div>
-                            
+
                             {/* items */}
 
                         </div>
@@ -67,12 +67,15 @@ export default function Cart() {
                                 <p className="font-bold">Rp.80.000</p>
                             </div>
                         </div>
-                        <button className="w-full mt-5 bg-primary rounded-lg py-2 font-semibold text-white outline-none">
-                            <Link href="/payment">Go to payment page</Link>
-                        </button>
+                        <Link href="/payment">
+                            <p className="w-full mt-5 bg-primary rounded-lg py-3 font-semibold text-white outline-non text-center">
+                                To Payment page
+                            </p>
+                        </Link>
+
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     )
 }

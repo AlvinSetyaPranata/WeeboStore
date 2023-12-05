@@ -69,7 +69,7 @@ export default function Navbar() {
                 </div>
 
                 {/* autocomplete */}
-                <div className={`w-full bg-white rounded-lg box-border px-4 py-2 text-sm font-heading absolute mt-2 ${state.isFocused && state.value != "" ? 'opacity-1' : 'opacity-0'}`}>
+                <div className={`w-full bg-white rounded-lg box-border px-4 py-2 text-sm font-heading absolute mt-2 ${state.isFocused && state.value != "" ? 'block' : 'hidden'}`}>
                     {/* rows */}
                     <div className="w-full">
                         <button className="w-full py-2 px-4 text-sm font-semibold text-left">{state.value}</button>

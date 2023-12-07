@@ -9,8 +9,8 @@ export default function Card({ title, price, priceDiscount, imageUrl }) {
                     src={imageUrl}
                     alt="card"
                     fill
-                    objectFit="cover"
-                    objectPosition="center center"
+                    style={{ objectFit: "cover", objectPosition: "center center" }}
+                    sizes="100vw"
                 />
             </div>
 

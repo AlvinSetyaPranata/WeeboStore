@@ -6,7 +6,6 @@ export const metadata = {
 }
 
 export default function Page({params, searchParams}) {
-    console.log(searchParams)
 
     return <Details />
     

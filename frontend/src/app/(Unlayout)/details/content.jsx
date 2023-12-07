@@ -51,12 +51,12 @@ export default function Details() {
 
                 <div>
                     <div className="w-[250px] h-[250px] relative">
-                        <Image
+                        <Image 
                             src={image == 1 ? "/card1.png" : "/card2.png"}
                             alt="card"
                             fill
-                            objectFit="cover"
-                            objectPosition="center center"
+                            style={{ objectFit: "cover", objectPosition: "center center" }}
+                            sizes="100vw"
                         />
                     </div>
 
@@ -64,12 +64,12 @@ export default function Details() {
                         {/* itterate trough later on */}
                         <button onClick={() => setImage(1)} className="border-[1.5px] hover:border-gray-500">
                             <div className="w-[50px] h-[50px]">
-                                <Image src="/card1.png" alt="images" objectFit="cover" />
+                                <Image  src="/card1.png" alt="images" style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw"/>
                             </div>
                         </button>
                         <button onClick={() => setImage(2)} className="border-[1.5px] hover:border-gray-500">
                             <div className="w-[50px] h-[50px]">
-                                <Image src="/card1.png" alt="images" objectPosition="center center" />
+                                <Image  src="/card1.png" alt="images" fill style={{objectFit: "cover", objectPosition: "center center"}} sizes="100vw"/>
                             </div>
                         </button>
                     </div>

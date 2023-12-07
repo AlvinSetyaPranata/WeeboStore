@@ -42,8 +42,8 @@ export default function Account() {
                         src="/profile.jpg"
                         alt="profile"
                         fill
-                        objectFit="cover"
-                        objectPosition="center center"
+                        style={{objectFit: "cover", objectPosition: "center center"}}
+                        sizes="100vw"
                     />
 
                     {/* overlay */}

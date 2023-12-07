@@ -43,7 +43,7 @@ export default function Search({title}) {
       <div className='w-full'>
         {/* heading */}
         <div className="flex items-center w-full justify-between flex-row-reverse">
-          <h1 className='text-slate-800 font-heading text-4xl font-bold'>{title}</h1>
+          <h1 className='text-slate-800 font-heading text-4xl font-bold'>Result for: {title}</h1>
 
           {/* utils section */}
           <div className='w-max flex items-center gap-x-8'>

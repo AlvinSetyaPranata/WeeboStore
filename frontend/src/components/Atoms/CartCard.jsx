@@ -25,11 +25,27 @@ export default function CartCard({ next }) {
                     newState["value"] = state.value + 1
                 }
                 break
+
+            case "CUSTOM":
+                newState["value"] = action.value
+                break
         }
-        next(state.value)
+        next(action.value)
 
         return newState
     }
+
+
+    const checkInput = () => {
+        console.log(state.value)
+        if (state.value >= 10) {
+            dispatch({ type: "CUSTOM", value: 10 })
+        }
+        else if (state.value < 0) {
+            dispatch({ type: "CUSTOM", value: 0 })
+        }
+    }
+
 
 
     const [state, dispatch] = useReducer(updateValueReducer, { value: 0 })
@@ -42,8 +58,7 @@ export default function CartCard({ next }) {
 
                 <div className="w-[120px] h-[120px] ml-3 relative">
 
-                    <Image src="/card1.png" alt="example" fill objectFit="cover"
-                        objectPosition="center center" />
+                    <Image src="/card1.png" alt="example" fill style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw" />
 
                 </div>
             </div>
@@ -59,7 +74,7 @@ export default function CartCard({ next }) {
 
                     <div className="flex gap-2 items-center">
                         <button onClick={() => dispatch({ type: "MIN" })}>-</button>
-                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={() => { }} />
+                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={(e) => dispatch({ type: "CUSTOM", value: e.target.value })} onBlur={checkInput} />
                         <button onClick={() => dispatch({ type: "ADD" })}>+</button>
                     </div>
                 </div>

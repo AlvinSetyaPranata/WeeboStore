@@ -95,8 +95,7 @@ export default function Payment() {
 
                   {/* next-image container */}
                   <div className='relative w-[120px] h-[120px]'>
-                    <Image src="/card1.png" alt="card" fill objectFit="cover"
-                      objectPosition="center center" />
+                    <Image src="/card1.png" alt="card" fill style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw"/>
                   </div>
                   {/* desc */}
                   <div>
@@ -110,8 +109,7 @@ export default function Payment() {
 
                   {/* next-image container */}
                   <div className='relative w-[120px] h-[120px]'>
-                    <Image src="/card1.png" alt="card" fill objectFit="cover"
-                      objectPosition="center center" />
+                    <Image src="/card1.png" alt="card" fill style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw"/>
                   </div>
                   {/* desc */}
                   <div>
@@ -125,8 +123,7 @@ export default function Payment() {
 
                   {/* next-image container */}
                   <div className='relative w-[120px] h-[120px]'>
-                    <Image src="/card1.png" alt="card" fill objectFit="cover"
-                      objectPosition="center center" />
+                    <Image src="/card1.png" alt="card" fill style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw"/>
                   </div>
                   {/* desc */}
                   <div>

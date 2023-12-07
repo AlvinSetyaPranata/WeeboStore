@@ -55,17 +55,22 @@ export default function Details() {
                             src={image == 1 ? "/card1.png" : "/card2.png"}
                             alt="card"
                             fill
-                            style={{ objectFit: "cover" }}
+                            objectFit="cover"
+                            objectPosition="center center"
                         />
                     </div>
 
                     <div className="flex gap-x-2 w-full mt-2">
                         {/* itterate trough later on */}
                         <button onClick={() => setImage(1)} className="border-[1.5px] hover:border-gray-500">
-                            <img src="/card1.png" alt="images" className="w-[50px] h-[50px] object-cover" />
+                            <div className="w-[50px] h-[50px]">
+                                <Image src="/card1.png" alt="images" objectFit="cover" />
+                            </div>
                         </button>
                         <button onClick={() => setImage(2)} className="border-[1.5px] hover:border-gray-500">
-                            <img src="/card2.png" alt="images" className="w-[50px] h-[50px]" />
+                            <div className="w-[50px] h-[50px]">
+                                <Image src="/card1.png" alt="images" objectPosition="center center" />
+                            </div>
                         </button>
                     </div>
                 </div>
@@ -103,7 +108,7 @@ export default function Details() {
                         </div>
                         <div className="flex gap-2 items-center">
                             <button onClick={() => dispatch({ type: "MIN" })}>-</button>
-                            <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={(e) => dispatch({type: "", value: e.target.value, isFocused: true})} onFocus={() => dispatch({type: "", isFocused: true})} onBlur={() => dispatch({type: "", isFocused: false})}/>
+                            <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={(e) => dispatch({ type: "", value: e.target.value, isFocused: true })} onFocus={() => dispatch({ type: "", isFocused: true })} onBlur={() => dispatch({ type: "", isFocused: false })} />
                             <button onClick={() => dispatch({ type: "ADD" })}>+</button>
                         </div>
                     </div>

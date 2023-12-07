@@ -5,7 +5,6 @@ export const metadata = {
 }
 
 export default function Page({searchParams}) {
-    console.log(searchParams)
 
-  return <Search />
+  return <Search title={searchParams.product ? searchParams.product : 'Search'} />
 }

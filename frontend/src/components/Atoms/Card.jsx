@@ -1,7 +1,7 @@
 import Image from "next/image"
 import Link from "next/link"
 
-export default function Card({title, price, priceDiscount, imageUrl}) {
+export default function Card({ title, price, priceDiscount, imageUrl }) {
     return (
         <Link className="overflow-hidden box-border w-[180px] border-primary border-2 p-2 hover:cursor-pointer rounded-lg flex-shrink-0 bg-white" href={`/details?product=${title}`} replace>
             <div className="relative w-full h-[180px] overflow-hidden rounded-lg hover:cursor-pointer">
@@ -9,8 +9,8 @@ export default function Card({title, price, priceDiscount, imageUrl}) {
                     src={imageUrl}
                     alt="card"
                     fill
-                    sizes="(min-width: 808px) 50vw, 100vw"
-                    style={{objectFit: "cover"}}
+                    objectFit="cover"
+                    objectPosition="center center"
                 />
             </div>
 
@@ -22,9 +22,9 @@ export default function Card({title, price, priceDiscount, imageUrl}) {
                     <div className="px-2 py-1 text-xs bg-red-500 text-white font-semibold">HOT SALE</div>
                 </div>
 
-                <div className="flex flex-row-reverse w-full justify-between items-center">
-                    {priceDiscount!=0 && priceDiscount && <p className="text-sm line-through text-slate-400">Rp.{priceDiscount}</p> }
-                    <p className="font-semibold">Rp.{price}</p>
+                <div className="flex w-full justify-between items-center">
+                    {priceDiscount != 0 && priceDiscount && <p className="text-sm line-through text-slate-400">Rp.{priceDiscount}</p>}
+                    <p className="font-semibold ml-auto">Rp.{price}</p>
                 </div>
             </div>
         </Link>

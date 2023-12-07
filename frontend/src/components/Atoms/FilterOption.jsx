@@ -20,10 +20,18 @@ export default function FilterOption() {
             </div>
 
             {/* options */}
-            <div className='mt-8 w-full grid place-items-start'>
+            <div className={`font-heading mt-8 w-full place-items-start ${expanded ? 'grid' : 'hidden'} gap-y-8`}>   
                 <div className="flex items-center">
-                    <input type="checkbox" className='h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-500' value="red" />
-                    <label className='ml-3 text-gray-500'>White</label>
+                    <input type="checkbox" className='h-4 w-4 rounded border-gray-300' value="red" />
+                    <label className='ml-3 text-gray-500 font-medium'>White</label>
+                </div>
+                <div className="flex items-center">
+                    <input type="checkbox" className='h-4 w-4 rounded border-gray-300' value="red" />
+                    <label className='ml-3 text-gray-500 font-medium'>White</label>
+                </div>
+                <div className="flex items-center">
+                    <input type="checkbox" className='h-4 w-4 rounded border-gray-300' value="red" />
+                    <label className='ml-3 text-gray-500 font-medium'>White</label>
                 </div>
 
             </div>

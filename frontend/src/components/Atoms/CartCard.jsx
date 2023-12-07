@@ -9,7 +9,7 @@ export default function CartCard({ next }) {
     const updateValueReducer = (state, action) => {
         let newState = {}
 
-        switch(action.type) {
+        switch (action.type) {
             case "MIN":
                 if (state.value <= 0) {
                     newState["value"] = state.value
@@ -24,7 +24,7 @@ export default function CartCard({ next }) {
                 } else {
                     newState["value"] = state.value + 1
                 }
-                break          
+                break
         }
         next(state.value)
 
@@ -32,7 +32,7 @@ export default function CartCard({ next }) {
     }
 
 
-    const [state, dispatch] = useReducer(updateValueReducer, {value: 0})
+    const [state, dispatch] = useReducer(updateValueReducer, { value: 0 })
 
     return (
 
@@ -42,7 +42,8 @@ export default function CartCard({ next }) {
 
                 <div className="w-[120px] h-[120px] ml-3 relative">
 
-                    <Image src="/card1.png" alt="example" fill style={{ objectFit: 'cover' }} />
+                    <Image src="/card1.png" alt="example" fill objectFit="cover"
+                        objectPosition="center center" />
 
                 </div>
             </div>
@@ -57,9 +58,9 @@ export default function CartCard({ next }) {
                     <p className="font-bold">Rp.300.000</p>
 
                     <div className="flex gap-2 items-center">
-                        <button onClick={() => dispatch({type: "MIN"})}>-</button>
-                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={()=>{}} />
-                        <button onClick={() => dispatch({type: "ADD"})}>+</button>
+                        <button onClick={() => dispatch({ type: "MIN" })}>-</button>
+                        <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={() => { }} />
+                        <button onClick={() => dispatch({ type: "ADD" })}>+</button>
                     </div>
                 </div>
             </div>

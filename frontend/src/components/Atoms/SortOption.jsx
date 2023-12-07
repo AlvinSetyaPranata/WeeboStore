@@ -34,6 +34,7 @@ export default function SortOption() {
         }
     }
 
+    // Will be presented as props later
     const options = [
         "Sort",
         "Most Popular",

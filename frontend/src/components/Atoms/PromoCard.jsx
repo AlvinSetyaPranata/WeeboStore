@@ -17,7 +17,9 @@ export default function PromoCard({ label, images }) {
             <div className="grid grid-cols-2 gap-4 mb-4">
                 {images.map((image, key) => (
                     <div className="relative w-[120px] h-[120px]" key={key}>
-                        <Image alt="promo-card" src={image} fill style={{objectFit: "cover"}}/>
+                        <Image alt="promo-card" src={image} fill objectFit="cover"
+                        objectPosition="center center"
+                        />
                     </div>
                 ))}
             </div>

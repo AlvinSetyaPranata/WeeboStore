@@ -65,7 +65,7 @@ export default function CartCard({ next, title, id, price=0, qty=0 }) {
             <div className="flex flex-col justify-between">
                 <div>
 
-                    <label className="font-semibold text-lg line-clamp-1">{title}</label>
+                    <label className="font-semibold line-clamp-1">{title}</label>
                     <p className="text-green-600 text-sm">Stock Available</p>
                 </div>
 

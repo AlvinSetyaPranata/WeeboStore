@@ -2,7 +2,7 @@
 
 import CartCard from "@/components/Atoms/CartCard";
 import Link from "next/link";
-import { useEffect, useMemo, useReducer, useState } from "react";
+import { useReducer, useState } from "react";
 
 export default function Cart() {
 
@@ -46,7 +46,7 @@ export default function Cart() {
         <div className="px-8 py-12 max-h-[80vh] overflow-y-auto">
             <div className="flex">
                 <div className="flex-1">
-                    <h2 className="text-2xl text-gray-500 font-semibold mb-8">Your Cart</h2>
+                    <h2 className="text-xl text-gray-500 font-semibold mb-8">Your Cart</h2>
 
                     <div className="flex w-full">
                         <div className="grid gap-8">
@@ -64,20 +64,18 @@ export default function Cart() {
                 <div className="px-8 w-1/3 bg-white">
                     <div className="sticky top-0">
 
-                        <h3 className="text-2xl font-bold">Sub Total</h3>
+                        <h3 className="text-xl font-bold">Sub Total</h3>
                         <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6">
 
-                            {state.map((item, itemKey) => {
-                                console.log(item)
-                                return (
+                            {state.map((item, itemKey) => (
                                 <div key={itemKey} className="w-full flex justify-between items-center">
-                                    <div className="">
-                                        <p className="font-semibold line-clamp-2">{item.name}</p>
+                                    <div className="text-sm">
+                                        <p className="font-semibold line-clamp-2 mb-1">{item.name}</p>
                                         <p>Rp.{item.price*item.qty}</p>
                                     </div>
                                     <p className="font-bold text-gray-500">{item.qty}x</p>
                                 </div>
-                            )})}
+                            ))}
 
 
                         </div>

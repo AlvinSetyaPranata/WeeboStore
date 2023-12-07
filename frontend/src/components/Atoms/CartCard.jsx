@@ -2,10 +2,10 @@
 
 import Image from "next/image"
 import TrashIcon from "../SVG/TrashIcon"
-import { useReducer } from "react"
+import { useEffect, useMemo, useReducer } from "react"
 
 
-export default function CartCard({ next }) {
+export default function CartCard({ next, title, id, price=0, qty=0 }) {
     const updateValueReducer = (state, action) => {
         let newState = {}
 
@@ -28,16 +28,15 @@ export default function CartCard({ next }) {
 
             case "CUSTOM":
                 newState["value"] = action.value
-                break
         }
-        next(action.value)
-
+        
         return newState
     }
 
-
+    
+    
+    
     const checkInput = () => {
-        console.log(state.value)
         if (state.value >= 10) {
             dispatch({ type: "CUSTOM", value: 10 })
         }
@@ -47,8 +46,9 @@ export default function CartCard({ next }) {
     }
 
 
-
-    const [state, dispatch] = useReducer(updateValueReducer, { value: 0 })
+    
+    const [state, dispatch] = useReducer(updateValueReducer, { value: qty })
+    useEffect(() => next(id, state.value), [state.value])
 
     return (
 
@@ -65,12 +65,12 @@ export default function CartCard({ next }) {
             <div className="flex flex-col justify-between">
                 <div>
 
-                    <label className="font-semibold text-lg line-clamp-1">Jaket cosplay asuna - Sword Art online</label>
+                    <label className="font-semibold text-lg line-clamp-1">{title}</label>
                     <p className="text-green-600 text-sm">Stock Available</p>
                 </div>
 
                 <div className="flex justify-between w-full">
-                    <p className="font-bold">Rp.300.000</p>
+                    <p className="font-bold">Rp.{price}</p>
 
                     <div className="flex gap-2 items-center">
                         <button onClick={() => dispatch({ type: "MIN" })}>-</button>

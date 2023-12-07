@@ -2,11 +2,42 @@
 
 import CartCard from "@/components/Atoms/CartCard";
 import Link from "next/link";
+import { useEffect, useMemo, useReducer, useState } from "react";
 
 export default function Cart() {
 
-    const onChange = (value) => {
-        console.log(value)
+    const data = [{
+        "name": "Jaket cosplay asuna - Sword Art online",
+        "price": 20000,
+        "qty": 1
+    }, {
+        "name": "Jaket cosplay asuna - Sword Art online",
+        "price": 20000,
+        "qty": 1
+    },]
+
+    const itemReducer = (state, action) => {
+        switch (action.type) {
+            case "SET_QTY":
+                let newState = state
+
+                newState[action.index]["qty"] = action.value
+
+                return newState
+        }
+    }
+
+    const [state, dispatch] = useReducer(itemReducer, data)
+    
+    // Dummy hooks that force UI to re-render
+    const [,setForce] = useState(false)
+
+
+
+    const onChange = (id, value) => {
+        dispatch({ type: "SET_QTY", index: id, value: value })
+
+        setForce(latest => !latest)
     }
 
 
@@ -19,8 +50,11 @@ export default function Cart() {
 
                     <div className="flex w-full">
                         <div className="grid gap-8">
-                            <CartCard next={onChange} />
-                            <CartCard next={onChange} />
+                            {state.map((item, itemKey) => (
+                                <CartCard key={itemKey} next={onChange} title={item.name} price={item.price} qty={item.qty} id={itemKey} />
+                            ))
+
+                            }
                         </div>
 
                     </div>
@@ -33,23 +67,18 @@ export default function Cart() {
                         <h3 className="text-2xl font-bold">Sub Total</h3>
                         <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6">
 
-                            {/* items */}
-                            <div className="w-full flex justify-between items-center">
-                                <div className="">
-                                    <p className="font-semibold line-clamp-2">Jaket cosplay asuna - Sword Art online</p>
-                                    <p>Rp.20.000</p>
+                            {state.map((item, itemKey) => {
+                                console.log(item)
+                                return (
+                                <div key={itemKey} className="w-full flex justify-between items-center">
+                                    <div className="">
+                                        <p className="font-semibold line-clamp-2">{item.name}</p>
+                                        <p>Rp.{item.price*item.qty}</p>
+                                    </div>
+                                    <p className="font-bold text-gray-500">{item.qty}x</p>
                                 </div>
-                                <p className="font-bold text-gray-500">2x</p>
-                            </div>
-                            <div className="w-full flex justify-between items-center">
-                                <div className="">
-                                    <p className="font-semibold line-clamp-2">Jaket cosplay asuna - Sword Art online</p>
-                                    <p>Rp.20.000</p>
-                                </div>
-                                <p className="font-bold text-gray-500">2x</p>
-                            </div>
+                            )})}
 
-                            {/* items */}
 
                         </div>
                         <p className="text-right mt-1 font-semibold text-primary underline-offset-2 hover:underline hover:cursor-pointer">use coupons</p>
@@ -59,7 +88,7 @@ export default function Cart() {
                                 <p className="font-bold">Rp.130.000</p>
                             </div>
                             <div className="flex justify-between items-center">
-                                <p className="font-semibold text-gray-500">Diskon</p>
+                                <p className="font-semibold text-gray-500">Discount</p>
                                 <p className="font-bold">-Rp.50.000</p>
                             </div>
                             <div className="flex justify-between items-center">

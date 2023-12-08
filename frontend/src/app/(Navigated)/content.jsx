@@ -85,7 +85,7 @@ export default function Home() {
 
                 {/* main content */}
                 <h3 className="font-bold text-2xl mb-4">For you</h3>
-                <div className="w-full grid gap-y-8 grid-cols-5 xl:grid-cols-7 xl:gap-x-1">
+                <div className="w-full grid gap-y-8 gap-x-4 grid-cols-5 xl:grid-cols-7 xl:gap-x-1">
                     <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
                     <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
                     <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />

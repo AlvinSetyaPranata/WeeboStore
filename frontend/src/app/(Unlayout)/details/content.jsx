@@ -50,7 +50,7 @@ export default function Details() {
             <div className="flex gap-8 py-20">
 
                 <div>
-                    <div className="w-[250px] h-[250px] relative">
+                    <div className="w-[150px] h-[150px] relative">
                         <Image 
                             src={image == 1 ? "/card1.png" : "/card2.png"}
                             alt="card"
@@ -63,13 +63,13 @@ export default function Details() {
                     <div className="flex gap-x-2 w-full mt-2">
                         {/* itterate trough later on */}
                         <button onClick={() => setImage(1)} className="border-[1.5px] hover:border-gray-500">
-                            <div className="w-[50px] h-[50px]">
-                                <Image  src="/card1.png" alt="images" style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw"/>
+                            <div className="w-[50px] h-[50px] relative">
+                                <Image  src="/card1.png" alt="images" fill style={{ objectFit: "cover", objectPosition: "center center" }} sizes="100vw"/>
                             </div>
                         </button>
                         <button onClick={() => setImage(2)} className="border-[1.5px] hover:border-gray-500">
-                            <div className="w-[50px] h-[50px]">
-                                <Image  src="/card1.png" alt="images" fill style={{objectFit: "cover", objectPosition: "center center"}} sizes="100vw"/>
+                            <div className="w-[50px] h-[50px] relative">
+                                <Image  src="/card2.png" alt="images" fill style={{objectFit: "cover", objectPosition: "center center"}} sizes="100vw"/>
                             </div>
                         </button>
                     </div>
@@ -123,7 +123,7 @@ export default function Details() {
             {/* Related content */}
             <div className="w-full px-16">
                 <h2 className="text-2xl font-semibold">You might want</h2>
-                <div className="mt-6 w-full grid grid-cols-5 gap-x-1 gap-y-4   ">
+                <div className="mt-6 w-full grid grid-cols-5 gap-x-8 gap-y-4   ">
                     <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />
                     <Card title="Jaket Asuna - SAO" price="30000" imageUrl="/card1.png" />
                     <Card title="Jaket kirito - SAO" price="30000" priceDiscount="120000" imageUrl="/card2.png" />

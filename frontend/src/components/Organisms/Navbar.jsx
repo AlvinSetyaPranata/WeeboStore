@@ -4,7 +4,7 @@
 import Link from "next/link";
 import { AccountIcon, CartIcon } from "../SVG";
 import MarketIcon from "../SVG/MarketIcon";
-import { useEffect, useReducer, useState } from "react";
+import { useMemo, useReducer, useState } from "react";
 import { usePathname } from "next/navigation";
 
 
@@ -44,7 +44,7 @@ export default function Navbar() {
     }
 
 
-    useEffect(() => {
+    useMemo(() => {
 
         switch (pathname) {
             case "/":
@@ -60,7 +60,7 @@ export default function Navbar() {
                 setActive(0)
                 break
         }
-    }, [])
+    }, [pathname])
 
 
     return (

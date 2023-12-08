@@ -2,10 +2,10 @@
 
 import Image from "next/image"
 import TrashIcon from "../SVG/TrashIcon"
-import { useEffect, useMemo, useReducer } from "react"
+import { useEffect, useReducer } from "react"
 
 
-export default function CartCard({ next, title, id, price=0, qty=0 }) {
+export default function CartCard({ next, title, id, handleDelete, price = 0, qty = 0 }) {
     const updateValueReducer = (state, action) => {
         let newState = {}
 
@@ -29,13 +29,13 @@ export default function CartCard({ next, title, id, price=0, qty=0 }) {
             case "CUSTOM":
                 newState["value"] = action.value
         }
-        
+
         return newState
     }
 
-    
-    
-    
+
+
+
     const checkInput = () => {
         if (state.value >= 10) {
             dispatch({ type: "CUSTOM", value: 10 })
@@ -46,7 +46,7 @@ export default function CartCard({ next, title, id, price=0, qty=0 }) {
     }
 
 
-    
+
     const [state, dispatch] = useReducer(updateValueReducer, { value: qty })
     useEffect(() => next(id, state.value), [state.value])
 
@@ -54,7 +54,9 @@ export default function CartCard({ next, title, id, price=0, qty=0 }) {
 
         <div className="w-full px-2 py-1 pb-4 flex gap-4 border-b-2 border-gray-100 mb-4">
             <div className="flex items-center">
-                <TrashIcon color="red" />
+                <button onClick={() => handleDelete(id)} className="outline-none">
+                    <TrashIcon color="red" />
+                </button>
 
                 <div className="w-[120px] h-[120px] ml-3 relative">
 

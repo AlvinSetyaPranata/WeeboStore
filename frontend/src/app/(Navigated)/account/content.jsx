@@ -78,14 +78,14 @@ export default function Account() {
             <div>
                 <div className="flex justify-between items-center w-full">
                     <h2 className="text-2xl font-semibold font-heading">Owned Coupons</h2>
-                    <Link href="/account" className="flex items-center group">
+                    <Link href="/coupons" className="flex items-center group">
                         <p className="font-semibold text-primary text-sm group-hover:underline">More about coupons</p>
                         <ArrowNext className="w-[10px] h-[10px]" color="rgb(109, 203, 255)" />
                     </Link>
                 </div>
                 <div className="space-y-6 rounded-lg p-2 py-8">
-                    <Coupons discount="30" title="30th April" desc="What happened in that day?" />
-                    <Coupons discount="60" title="Ramadhan Special Sale" desc="Month of forgiveness and blessings" />
+                    <Coupons discount="30" title="30th April" desc="What happened in that day?" owned={true}/>
+                    <Coupons discount="60" title="Ramadhan Special Sale" desc="Month of forgiveness and blessings" owned={true}/>
                 </div>
 
             </div>

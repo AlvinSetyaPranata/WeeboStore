@@ -20,7 +20,7 @@ export default function CouponsPage() {
       <div className='mt-10'>
         <h1 className='font-bold text-gray-500'>Purchase Coupons</h1>
         <div className='grid w-full mt-4 gap-y-4'>
-          <Coupons title="The day of trancending day" desc="Only hope that can rise the light" discount={10} />
+          <Coupons title="The day of trancending day" desc="Only hope that can raise the light" discount={10} />
           <Coupons title="The day of trancending day" desc="Only hope that can rise the light" discount={10} />
           <Coupons title="The day of trancending day" desc="Only hope that can rise the light" discount={10} />
         </div>

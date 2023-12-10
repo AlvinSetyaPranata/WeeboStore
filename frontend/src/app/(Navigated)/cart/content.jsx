@@ -6,6 +6,8 @@ import { useReducer, useState } from "react";
 
 export default function Cart() {
 
+
+    
     const data = [{
         index: 0,
         name: "Jaket cosplay asuna - Sword Art online",

@@ -49,11 +49,6 @@ export default function HorizontalGroup({ children, label }) {
                 <div ref={sliderWrapperRef} className="w-max duration-100 transition-transform ease-in flex gap-x-4 px-2" style={{transform: `translateX(${index}px)`}}>
                     {children}
                 </div>
-                {/* {children.map((children, i) => (
-                    <div className="duration-100 transition-transform ease-in" style={{transform: `translateX(${100*(i-index)}%)`}} key={i}>
-                        {children}
-                    </div>
-                ))} */}
             </div>
         </div>
     )

@@ -1,15 +1,13 @@
-import Footer from '@/components/Footer'
-import './globals.css'
-import Navbar from '@/components/Navbar'
+'use client'
+
+import '@/app/globals.css'
 
 export default function RootLayout({ children }) {
-  return (
-    <html lang="en">
-      <body>
-        <Navbar/>
-          {children}
-          <Footer />
-      </body>
-    </html>
-  )
+    return (
+        <html lang="en">
+            <body>
+                {children}
+            </body>
+        </html>
+    )
 }

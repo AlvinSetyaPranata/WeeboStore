@@ -27,6 +27,7 @@ import QuestionMark from "@/components/SVG/QuestionMark"
 import InformationIcon from "@/components/SVG/InformationIcon"
 import Coupons from "@/components/Atoms/Coupons"
 import { ArrowNext } from "@/components/SVG"
+import ClockIcon from "@/components/SVG/ClockIcon"
 
 
 export default function Account() {
@@ -41,7 +42,8 @@ export default function Account() {
                         src="/profile.jpg"
                         alt="profile"
                         fill
-                        style={{ objectFit: "cover" }}
+                        style={{objectFit: "cover", objectPosition: "center center"}}
+                        sizes="100vw"
                     />
 
                     {/* overlay */}
@@ -75,15 +77,15 @@ export default function Account() {
 
             <div>
                 <div className="flex justify-between items-center w-full">
-                <h2 className="text-2xl font-semibold font-heading">Owned Coupons</h2>
-                <Link href="/account" className="flex items-center group">
-                    <p className="font-semibold text-primary text-sm group-hover:underline">Get more coupons</p>
-                    <ArrowNext className="w-[10px] h-[10px]" color="rgb(109, 203, 255)" />
-                </Link>
+                    <h2 className="text-2xl font-semibold font-heading">Owned Coupons</h2>
+                    <Link href="/coupons" className="flex items-center group">
+                        <p className="font-semibold text-primary text-sm group-hover:underline">More about coupons</p>
+                        <ArrowNext className="w-[10px] h-[10px]" color="rgb(109, 203, 255)" />
+                    </Link>
                 </div>
                 <div className="space-y-6 rounded-lg p-2 py-8">
-                    <Coupons discount="30" title="30th April" desc="What happened in that day?"/>
-                    <Coupons discount="60" title="Ramadhan Special Sale" desc="Month of forgiveness and blessings"/>
+                    <Coupons discount="30" title="30th April" desc="What happened in that day?" owned={true}/>
+                    <Coupons discount="60" title="Ramadhan Special Sale" desc="Month of forgiveness and blessings" owned={true}/>
                 </div>
 
             </div>
@@ -98,24 +100,22 @@ export default function Account() {
                 <div className="space-y-12 rounded-lg p-2 border-[1px] border-gray-300 mt-4">
                     <div className="w-full px-3 py-4 space-y-8">
 
-                        {/* action buttons */}
-                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6">
+                        {/* CTA buttons */}
+                        <Link href="/transactions" className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
+                            <ClockIcon className="w-[20px] h-[20px]" />
+                            Transactions history
+                        </Link>
+                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
                             <HeadphoneIcon color="black" className="w-[20px] h-[20px]" />
-                            <Link href="/account" className="text-sm text-slate-600">
-                                Contact us
-                            </Link>
+                            Contact us
                         </div>
-                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6">
+                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
                             <QuestionMark className="w-[20px] h-[20px]" color="black" />
-                            <Link href="/account" className="text-sm text-slate-600">
                                 Need Help
-                            </Link>
                         </div>
-                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6">
+                        <div className="flex items-center gap-2 hover:cursor-pointer pt-2 border-b-[1px] border-gray-300 pb-6 text-sm text-slate-600">
                             <InformationIcon className="w-[20px] h-[20px]" color="black" />
-                            <Link href="/account" className="text-sm text-slate-600">
                                 About us
-                            </Link>
                         </div>
 
 

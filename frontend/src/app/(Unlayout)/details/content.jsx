@@ -2,7 +2,7 @@
 
 
 import Card from "@/components/Atoms/Card";
-import useStore from "@/hooks/useStrore";
+import useCartStore from "@/hooks/useCartStore";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -11,7 +11,7 @@ import { useReducer, useState } from "react";
 export default function Details() {
     const [expanded, setExpanded] = useState(false)
     const [image, setImage] = useState(1)
-    const [store, ] = useStore("client-cart", [])
+    const [setStoreData, , ] = useCartStore()
     const router = useRouter()
 
     const qtyReducer = (state, action) => {
@@ -23,8 +23,8 @@ export default function Details() {
                 if (state.value >= 10) return { value: state.value }
                 return { value: state.value + 1 }
             default:
-                console.log(state.value)
-                if (state.value >= 10 && state.value < 0 && !state.isFocused) {
+
+                if ((state.value >= 10 && state.value < 0 && !state.isFocused) || !action.value) {
                     return { value: 0 }
                 }
                 return { value: action.value }
@@ -36,7 +36,7 @@ export default function Details() {
 
 
     const handleAddCart = () => {
-        store({"name" : "Jacket Kirito", "price" : 15000, "qty" : state.value})
+        setStoreData({"name" : "Jacket Kirito", "price" : 15000, "qty" : state.value})
         router.push('/cart')
     }
 

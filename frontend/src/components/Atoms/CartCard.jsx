@@ -64,7 +64,7 @@ export default function CartCard({ next, title, id, handleDelete, price = 0, qty
 
                 </div>
             </div>
-            <div className="flex flex-col justify-between">
+            <div className="min-w-[50%] flex flex-col justify-between">
                 <div>
 
                     <label className="font-semibold line-clamp-1">{title}</label>
@@ -75,9 +75,9 @@ export default function CartCard({ next, title, id, handleDelete, price = 0, qty
                     <p className="font-bold">Rp.{price}</p>
 
                     <div className="flex gap-2 items-center">
-                        <button onClick={() => dispatch({ type: "MIN" })}>-</button>
+                        <button className="outline-none" onClick={() => dispatch({ type: "MIN" })}>-</button>
                         <input type="text" className="border-2 border-gray-300  rounded-lg py-0.5 max-w-[80px] text-sm text-center foont-semibold" value={state.value} onChange={(e) => dispatch({ type: "CUSTOM", value: e.target.value })} onBlur={checkInput} />
-                        <button onClick={() => dispatch({ type: "ADD" })}>+</button>
+                        <button className="outline-none" onClick={() => dispatch({ type: "ADD" })}>+</button>
                     </div>
                 </div>
             </div>

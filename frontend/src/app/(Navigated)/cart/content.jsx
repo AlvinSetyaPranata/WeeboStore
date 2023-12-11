@@ -1,30 +1,14 @@
 'use client'
 
 import CartCard from "@/components/Atoms/CartCard";
+import useCartStore from "@/hooks/useCartStore";
 import Link from "next/link";
 import { useReducer, useState } from "react";
 
 export default function Cart() {
 
-
-    
-    const data = [{
-        index: 0,
-        name: "Jaket cosplay asuna - Sword Art online",
-        price: 20000,
-        qty: 1
-    }, {
-        index: 1,
-        name: "Jaket cosplay asuna - Sword Art online",
-        price: 30000,
-        qty: 3
-    },
-    {
-        index: 2,
-        name: "Jaket cosplay asuna - Sword Art online",
-        price: 20000,
-        qty: 1
-    },]
+    const [, updateStoreData, getStoreData] = useCartStore()
+    const data = getStoreData()
 
     const itemReducer = (state, action) => {
         switch (action.type) {
@@ -38,27 +22,31 @@ export default function Cart() {
             case "REMOVE_ITEM":
                 var newState = state.filter(item => item.index != action.index)
 
+                updateStoreData(newState)
+
                 return newState
         }
     }
 
+    // Cart Card state
     const [state, dispatch] = useReducer(itemReducer, data)
 
     // Dummy hooks that force UI to re-render
     const [, setForce] = useState(false)
 
-
-
+    // handles whenever the cartCard quantity is changed
     const onChange = (id, value) => {
         dispatch({ type: "SET_QTY", index: id, value: value })
         setForce(latest => !latest)
     }
 
 
+    // handles whenever the cartCard is deleted
     const onItemRemove = (id) => {
         dispatch({ type: "REMOVE_ITEM", index: id })
         setForce(latest => !latest)
     }
+
 
     return (
 
@@ -68,16 +56,13 @@ export default function Cart() {
                     <h2 className="text-xl text-gray-500 font-semibold mb-8">{state.length > 0 ? 'Your Cart' : 'Your Cart is empty'}</h2>
 
                     <div className="flex w-full">
-                        <div className="grid gap-8 w-full">
-                            {state.length == 0 &&
-                                <div className="py-12 w-full grid place-items-center">
-                                    <h3 className="text-gray-500 font-medium">Buy something for me, ni-chan</h3>
-                                    <Link className="text-center bg-primary font-semibold rounded-lg py-2 outline-none w-1/4 text-sm text-white mt-2" href="/" replace>To market</Link>
-                                </div>
-                            }
-                            {state.map((item, itemKey) => (
+                        <div className="grid gap-8 w-full pr-4">
+                            {state && state.length > 0  ? state.map((item, itemKey) => (
                                 <CartCard key={itemKey} next={onChange} title={item.name} price={item.price} qty={item.qty} id={item.index} handleDelete={onItemRemove} />
-                            ))
+                            )) : <div className="py-12 w-full grid place-items-center">
+                                <h3 className="text-gray-500 font-medium">Buy something for me, ni-chan</h3>
+                                <Link className="text-center bg-primary font-semibold rounded-lg py-2 outline-none w-1/4 text-sm text-white mt-2" href="/" replace>To market</Link>
+                            </div>
 
                             }
                         </div>
@@ -93,15 +78,16 @@ export default function Cart() {
                             <h3 className="text-xl font-bold">Sub Total</h3>
                             <div className="grid gap-8 mt-6 border-b-2 border-gray-400 pb-6">
 
-                                {state.map((item, itemKey) => (
+                                {state && state.map((item, itemKey) => (
                                     <div key={itemKey} className="w-full flex justify-between items-center">
                                         <div className="text-sm">
                                             <p className="font-semibold line-clamp-2 mb-1">{item.name}</p>
                                             <p>Rp.{item.price * item.qty}</p>
                                         </div>
                                         <p className="font-bold text-gray-500">{item.qty}x</p>
-                                    </div>
-                                ))}
+                                    </div>)
+                                )
+                                }
 
 
                             </div>

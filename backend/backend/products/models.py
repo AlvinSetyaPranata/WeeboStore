@@ -5,6 +5,8 @@ from django.db import models
 
 class Catagory(models.Model):
     catagory_name = models.CharField(max_length=255, unique=True)
+    catagory_image = models.FileField(upload_to='catagories/images/', blank=True, null=True)
+    
 
     @classmethod
     def get_default_pk(cls):
@@ -19,7 +21,7 @@ class Catagory(models.Model):
 
 
 class Product(models.Model):
-    title = models.CharField(max_length=255, unique=True)
+    name = models.CharField(max_length=255, unique=True)
     description = models.TextField()
     price = models.IntegerField()
     discount_price = models.IntegerField(blank=True, null=True, default=0)

@@ -8,7 +8,7 @@ import PromoCardContiner from "@/components/Molecules/PromoCardContiner"
 import { motion } from "framer-motion"
 
 
-export default function Home() {
+export default function Home({catagories}) {
 
     return (
         <div className="pt-1 pb-12">
@@ -51,9 +51,6 @@ export default function Home() {
 
                 <div className="mt-6 w-full px-4 box-border">
                     <div className="grid grid-cols-3 mt-4 gap-y-4 gap-x-12">
-                        <CatagoryCard />
-                        <CatagoryCard />
-                        <CatagoryCard />
                         <CatagoryCard />
                         <CatagoryCard />
                         <CatagoryCard />

@@ -1,4 +1,4 @@
-// import { imageUrlResolver } from "@/utils/imageUrlResolver"
+import imageUrlResolver from "@/utils/imageUrlResolver"
 import Home from "./content"
 
 export const metadata = {
@@ -6,26 +6,24 @@ export const metadata = {
 }
 
 
-// export async function getData() {
-//   const res = await fetch('http://127.0.0.1:8000/api/products')
-//   const data = await res.json()
+export async function getData() {
+  const res = await fetch('http://127.0.0.1:8000/api/products')
+  const data = await res.json()
 
-//   return data
-// }
+  return data
+}
 
 
 
 export default async function Page() {
-  // const data = await getData()
+  const data = await getData()
 
-  // const newData = data.map((field) => {
-  //   field.product_image = imageUrlResolver(field.product_image)
+  const newData = data.map((field) => {
+    field.product_image = imageUrlResolver(field.product_image)
 
-  //   return field
-  // })
+    return field
+  })
 
-  // return <Home data={newData} />
-  return (
-    <Home />
-  )
+
+  return <Home catagories={newData} />
 }

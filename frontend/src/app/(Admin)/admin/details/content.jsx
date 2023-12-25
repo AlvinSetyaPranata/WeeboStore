@@ -3,6 +3,9 @@ import React from 'react'
 export default function Details() {
     return (
         <>
+            {/* sidebar */}
+             
+
             <h1 className='mt-12 ml-12 text-2xl font-bold mb-8'>Detail Produk</h1>
 
             <form action="">

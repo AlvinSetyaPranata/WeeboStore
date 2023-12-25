@@ -7,10 +7,18 @@ export const metadata = {
 
 
 export async function getData() {
-  const res = await fetch('http://127.0.0.1:8000/api/products')
-  const data = await res.json()
-
-  return data
+  try {
+    const res = await fetch('http://127.0.0.1:8000/api/products', {
+    next: {
+        revalidate: 86400, // Re-request to server every 1 day
+      }
+    })
+    const data = await res.json()
+  
+    return data
+  } catch {
+    return []
+  }
 }
 
 
@@ -25,5 +33,5 @@ export default async function Page() {
   })
 
 
-  return <Home catagories={newData} />
+  return <Home data={newData} />
 }

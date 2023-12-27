@@ -1,1 +1,2 @@
-web: cd backend && cd backend && gunicorn backend.wsgi:application
+web: cd backend/backend && gunicorn backend.wsgi:application
+release: python manage.py migrate

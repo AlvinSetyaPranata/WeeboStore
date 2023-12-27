@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-5d8m7wvx*f+v-^zd9700e8zkal!j--jv(j5%p0#dyd)mk*9g**
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['weboostore-api-e7f660df1ebe.herokuapp.com']
 
 
 # Application definition

@@ -29,5 +29,5 @@ class Product(models.Model):
     product_catagory = models.ForeignKey(Catagory, on_delete=models.CASCADE, default=Catagory.get_default_pk)
 
     def __str__(self):
-        return self.title
+        return self.name
     

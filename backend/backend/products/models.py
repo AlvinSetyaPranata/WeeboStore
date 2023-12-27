@@ -5,7 +5,6 @@ from django.db import models
 
 class Catagory(models.Model):
     catagory_name = models.CharField(max_length=255, unique=True)
-    catagory_image = models.FileField(upload_to='catagories/images/', blank=True, null=True)
     
 
     @classmethod
